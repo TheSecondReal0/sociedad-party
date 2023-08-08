@@ -5,7 +5,7 @@ extends Node2D
 
 @onready var non_game_children: Array = [$ui_controller]
 
-var open_timer_res: Resource = load("res://assets/ui/timer_ui/open_timer_ui.tres")
+var open_timer_res: Resource = load("res://ui/timer_ui/open_timer_ui.tres")
 var current_game: Node
 
 func _ready():
@@ -15,7 +15,7 @@ func _ready():
 	GameManager.connect("switch_game_signal", Callable(self, "switch_game"))
 # warning-ignore:return_value_discarded
 	GameManager.connect("start_game_signal", Callable(self, "start_game"))
-	#print(get_tree().is_network_server())
+#	print(Network.is_network_server())
 	if Network.is_server():
 		host_ui_res.interact()
 	score_ui_res.interact()

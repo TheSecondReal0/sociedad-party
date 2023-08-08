@@ -13,7 +13,7 @@ func _ready():
 func start_game():
 	if Network.is_server():
 		GameManager.start_game()
-	UIManager.close_ui("res://assets/ui/timer_ui/timer_ui.tscn")
+	UIManager.close_ui("res://ui/timer_ui/timer_ui.tscn")
 	close()
 
 # called by ui_controller when opened by the UI system

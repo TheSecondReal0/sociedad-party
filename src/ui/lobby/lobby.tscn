@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2ar5f2oeveac"]
 
-[ext_resource type="StyleBox" uid="uid://c2ubow3e2yooy" path="res://assets/ui/lobby/theme/panels/default_border_panel.tres" id="1_4uviy"]
-[ext_resource type="Script" path="res://assets/ui/lobby/lobby.gd" id="1_chgh2"]
-[ext_resource type="Script" path="res://assets/ui/lobby/player_list.gd" id="1_o4ukc"]
-[ext_resource type="PackedScene" uid="uid://k8pi0n3kbpke" path="res://assets/ui/lobby/player_bar/player_bar.tscn" id="2_exqvw"]
+[ext_resource type="StyleBox" uid="uid://c2ubow3e2yooy" path="res://ui/lobby/theme/panels/default_border_panel.tres" id="1_4uviy"]
+[ext_resource type="Script" path="res://ui/lobby/lobby.gd" id="1_chgh2"]
+[ext_resource type="Script" path="res://ui/lobby/player_list.gd" id="1_o4ukc"]
+[ext_resource type="PackedScene" uid="uid://k8pi0n3kbpke" path="res://ui/lobby/player_bar/player_bar.tscn" id="2_exqvw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ey0t0"]
 content_margin_left = 0.0

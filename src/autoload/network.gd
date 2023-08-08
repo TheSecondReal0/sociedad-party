@@ -414,7 +414,7 @@ func switch_to_main_scene() -> void:
 
 func switch_to_lobby_scene() -> void:
 	switch_to_main_scene()
-#	get_tree().change_scene_to_file("res://assets/ui/lobby/lobby.tscn")
+#	get_tree().change_scene_to_file("res://ui/lobby/lobby.tscn")
 
 func _ready():
 	randomize()

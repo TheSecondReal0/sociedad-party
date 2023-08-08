@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8ibs632ykel5"]
 
-[ext_resource type="Script" path="res://assets/ui/main_menu/main_menu.gd" id="1"]
-[ext_resource type="Theme" uid="uid://bxa6m86764q1f" path="res://assets/ui/theme/sociedad_theme.tres" id="1_q75p3"]
+[ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="1"]
+[ext_resource type="Theme" uid="uid://bxa6m86764q1f" path="res://ui/theme/sociedad_theme.tres" id="1_q75p3"]
 
 [node name="lobby" type="Control"]
 layout_mode = 3

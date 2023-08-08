@@ -22,10 +22,6 @@ func _ready():
 # warning-ignore:return_value_discarded
 	UIManager.connect("free_ui_signal", Callable(self, "free_ui"))
 
-	#TODO: better system for auto spawning UIs
-	instance_ui("chatbox")
-	instance_ui("interactui")
-
 #menu data is data to pass to the menu, such as a task identifier
 #reinstance is whether or not to recreate the corresponding menu node if it already exists
 func open_ui(ui_path: String, ui_data: Dictionary = {}, reinstance: bool = false):

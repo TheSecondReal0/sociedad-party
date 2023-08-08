@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://k8pi0n3kbpke"]
 
-[ext_resource type="Script" path="res://assets/ui/lobby/player_bar/player_bar.gd" id="1_2nmah"]
+[ext_resource type="Script" path="res://ui/lobby/player_bar/player_bar.gd" id="1_2nmah"]
 [ext_resource type="Texture2D" uid="uid://wm0oankl0gs5" path="res://common/textures/squares/square.png" id="1_gsq1w"]
 
 [node name="player_bar" type="PanelContainer" node_paths=PackedStringArray("label", "rect")]
