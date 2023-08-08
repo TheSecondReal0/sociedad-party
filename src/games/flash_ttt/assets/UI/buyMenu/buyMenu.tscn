@@ -1,0 +1,139 @@
+[gd_scene format=2]
+
+[node name="buyMenu" type="WindowDialog"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.7
+window_title = "Buy Menu for Special Items (normal IQ tho)"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonTitle" type="Label" parent="."]
+anchor_right = 0.5
+anchor_bottom = 0.1
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -6.0
+text = "Special Items"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonScroller" type="ScrollContainer" parent="."]
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="GridContainer" parent="ButtonScroller"]
+margin_right = 182.0
+margin_bottom = 110.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Armor" type="Button" parent="ButtonScroller/ButtonContainer"]
+margin_right = 86.5
+margin_bottom = 20.0
+rect_min_size = Vector2( 86.5, 0 )
+text = "Armor"
+
+[node name="Jihad" type="Button" parent="ButtonScroller/ButtonContainer"]
+margin_left = 96.0
+margin_right = 182.5
+margin_bottom = 20.0
+rect_min_size = Vector2( 86.5, 0 )
+text = "Jihad"
+
+[node name="Grenade" type="Button" parent="ButtonScroller/ButtonContainer"]
+margin_top = 30.0
+margin_right = 86.5
+margin_bottom = 50.0
+rect_min_size = Vector2( 86.5, 0 )
+text = "Grenade"
+
+[node name="Sticky Bomb" type="Button" parent="ButtonScroller/ButtonContainer"]
+margin_left = 96.0
+margin_top = 30.0
+margin_right = 182.0
+margin_bottom = 50.0
+text = "Stickybomb"
+
+[node name="C4" type="Button" parent="ButtonScroller/ButtonContainer"]
+margin_top = 60.0
+margin_right = 86.0
+margin_bottom = 80.0
+text = "C4"
+
+[node name="Cloaking Device" type="Button" parent="ButtonScroller/ButtonContainer"]
+margin_left = 96.0
+margin_top = 60.0
+margin_right = 182.0
+margin_bottom = 80.0
+text = "Cloaker"
+
+[node name="Knife" type="Button" parent="ButtonScroller/ButtonContainer"]
+margin_top = 90.0
+margin_right = 86.0
+margin_bottom = 110.0
+text = "Knife"
+
+[node name="ItemName" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.1
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Bulletproof Vest"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BuyButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Buy (0/1 Credits)"
+__meta__ = {
+"_edit_lock_": true
+}

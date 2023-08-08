@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://games/coup/resources/coupcard.gd" type="Script" id=1]
+[ext_resource path="res://games/coup/actions/assassinate.tres" type="Resource" id=2]
+
+[resource]
+resource_name = "Contessa"
+script = ExtResource( 1 )
+name = "Contessa"
+color = Color( 0.498039, 0, 0, 1 )
+desc = "Blocks assassination. Literally useless other than that, but somehow still a good card."
+actions = [  ]
+blocks = [ ExtResource( 2 ) ]

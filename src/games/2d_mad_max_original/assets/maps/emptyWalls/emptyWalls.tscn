@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10000, 10 )
+
+[node name="walls" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -10, -10, 1910, -10, 1910, 10, -10, 10 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 0, 1000 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D3"]
+position = Vector2( 0, -1000 )
+polygon = PoolVector2Array( -10, -10, 10, -10, 10, 1010, -10, 1010 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+rotation = 1.5708
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D2"]
+position = Vector2( 1000, 0 )
+rotation = -1.5708
+polygon = PoolVector2Array( -10, -10, 1910, -10, 1910, 10, -10, 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 1900, 0 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="StaticBody2D4"]
+rotation = -1.5708
+polygon = PoolVector2Array( -10, -10, 10, -10, 10, 1010, -10, 1010 )

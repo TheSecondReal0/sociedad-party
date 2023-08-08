@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/reaper/ui/dash_ui/dash_ui.gd" type="Script" id=1]
+
+[node name="dash_ui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dashes" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -60.0
+margin_right = 100.0
+margin_bottom = -50.0
+text = "Dashes: 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}

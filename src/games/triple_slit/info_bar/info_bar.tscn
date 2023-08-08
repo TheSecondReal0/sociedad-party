@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/triple_slit/info_bar/info_bar.gd" type="Script" id=1]
+
+[node name="info_bar" type="HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info_name" type="Label" parent="."]
+margin_top = 5.0
+margin_right = 56.0
+margin_bottom = 19.0
+text = "Number:"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+margin_left = 60.0
+margin_right = 118.0
+margin_bottom = 24.0
+
+[node name="info_value" type="Label" parent="."]
+visible = false
+margin_left = 60.0
+margin_top = 5.0
+margin_right = 68.0
+margin_bottom = 19.0
+text = "5"

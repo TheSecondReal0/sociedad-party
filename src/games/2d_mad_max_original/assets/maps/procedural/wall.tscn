@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="wall" type="StaticBody2D" groups=["walls"]]
+physics_material_override = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+polygon = PoolVector2Array( -10, -10, 10, -10, 10, 10, -10, 10 )

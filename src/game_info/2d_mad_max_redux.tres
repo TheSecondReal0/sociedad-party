@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/apgi/resources/game_info/gameinfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+game_name = "2D Mad Max Redux"
+game_description = ""
+rounds = 1
+timer = false
+main_scene_path = "res://games/2d_mad_max_redux/assets/main/main.tscn"
+unique_server_main = true
+server_main_scene_path = "res://games/2d_mad_max_redux/assets/main/serverMain.tscn"

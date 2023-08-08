@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://games/coup/resources/coupcard.gd" type="Script" id=1]
+[ext_resource path="res://games/coup/actions/steal.tres" type="Resource" id=2]
+
+[resource]
+resource_name = "Captain"
+script = ExtResource( 1 )
+name = "Captain"
+color = Color( 0.247059, 0.74902, 1, 1 )
+desc = "Would have a scar and a cool eyepatch, but I be a lazy dev. Is also blue, classically the color of thieves."
+actions = [ ExtResource( 2 ) ]
+blocks = [ ExtResource( 2 ) ]

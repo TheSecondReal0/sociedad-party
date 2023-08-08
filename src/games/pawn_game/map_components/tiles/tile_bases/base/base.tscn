@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/pawn_game/map_components/tiles/tile_bases/base/base.gd" type="Script" id=1]
+
+[node name="tile" type="Node2D"]
+z_index = -5
+script = ExtResource( 1 )

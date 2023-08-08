@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://games/coup/ui/common/panels/outline.tres" type="StyleBox" id=1]
+[ext_resource path="res://games/coup/ui/player_cards/player_cards.gd" type="Script" id=2]
+
+[node name="player_cards" type="PanelContainer"]
+show_behind_parent = true
+anchor_right = 0.3
+anchor_bottom = 1.0
+margin_left = 0.707153
+margin_right = -4.29285
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 297.2
+margin_bottom = 595.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 292.2
+margin_bottom = 590.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

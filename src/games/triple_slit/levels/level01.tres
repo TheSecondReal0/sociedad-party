@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://games/triple_slit/triple_slit_level/tripleslitlevel.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+desc = "Transmit either a 0 or a 1"
+button_amount = 1
+info_template = {
+"Number": PoolIntArray( 0, 1 )
+}

@@ -1,0 +1,43 @@
+[gd_scene format=2]
+
+[node name="walls" type="Node2D"]
+
+[node name="top" type="ColorRect" parent="."]
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 1025.0
+margin_bottom = 5.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bottom" type="ColorRect" parent="."]
+margin_left = -5.0
+margin_top = 595.0
+margin_right = 1025.0
+margin_bottom = 605.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="ColorRect" parent="."]
+margin_left = -5.0
+margin_top = -5.0
+margin_right = 5.0
+margin_bottom = 605.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="ColorRect" parent="."]
+margin_left = 1015.0
+margin_top = -5.0
+margin_right = 1025.0
+margin_bottom = 605.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

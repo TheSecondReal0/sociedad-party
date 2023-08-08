@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://games/flash_ttt/assets/maps/classicMap/TestMap2.1.png" type="Texture" id=1]
+[ext_resource path="res://games/flash_ttt/assets/weapons/portal/portal.gd" type="Script" id=2]
+
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[node name="portal" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -0.626587, 1.00867 )
+anchor_mode = 0
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1024, 600 )
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 743.111, 265.07 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = SubResource( 1 )
+
+[node name="TestMap21" type="Sprite" parent="."]
+position = Vector2( 372.214, 252.441 )
+texture = ExtResource( 1 )

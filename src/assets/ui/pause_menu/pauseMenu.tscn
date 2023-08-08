@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/UI/pauseMenu/pauseMenu.gd" type="Script" id=1]
+
+[node name="pauseMenu" type="Control"]
+visible = false
+anchor_left = 0.35
+anchor_top = 0.2
+anchor_right = 0.65
+anchor_bottom = 0.8
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="verticalButtons" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 3.05176e-05
+custom_constants/separation = 25
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="verticalButtons"]
+margin_top = 78.0
+margin_right = 384.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 50 )
+text = "Resume"
+
+[node name="Options" type="Button" parent="verticalButtons"]
+margin_top = 153.0
+margin_right = 384.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 0, 50 )
+text = "Options (WIP)"
+
+[node name="Leave" type="Button" parent="verticalButtons"]
+margin_top = 228.0
+margin_right = 384.0
+margin_bottom = 278.0
+rect_min_size = Vector2( 0, 50 )
+text = "Leave"
+
+[node name="Quit" type="Button" parent="verticalButtons"]
+margin_top = 303.0
+margin_right = 384.0
+margin_bottom = 353.0
+rect_min_size = Vector2( 0, 50 )
+text = "Quit"
+[connection signal="pressed" from="verticalButtons/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="verticalButtons/Leave" to="." method="_on_Leave_pressed"]
+[connection signal="pressed" from="verticalButtons/Quit" to="." method="_on_Quit_pressed"]

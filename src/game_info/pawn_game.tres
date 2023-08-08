@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/apgi/resources/game_info/gameinfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+game_name = "Pawn Game"
+game_description = "v epic game, you can tell by how creative the name is"
+rounds = 1
+timer = false
+main_scene_path = "res://games/pawn_game/main/pawn_game_main.tscn"
+unique_server_main = false
+server_main_scene_path = ""

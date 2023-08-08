@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://games/flash_ttt/assets/weapons/bullets/textures/EmitterPlaceholder.PNG" type="Texture" id=1]
+[ext_resource path="res://games/flash_ttt/assets/weapons/bullets/bullet/bullet.gd" type="Script" id=2]
+
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 2
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Bullet" type="KinematicBody2D"]
+material = SubResource( 1 )
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Mask" type="Light2D" parent="."]
+scale = Vector2( 0.02, 0.02 )
+enabled = false
+texture = ExtResource( 1 )
+energy = 2.0
+mode = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Polygon2D" parent="."]
+z_as_relative = false
+polygon = PoolVector2Array( -10, -10, 10, -10, 10, 10, -10, 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BulletHitReg" type="Area2D" parent="."]
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletHitReg"]
+shape = SubResource( 2 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SelfCollideTimer" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+[connection signal="body_entered" from="BulletHitReg" to="." method="_on_BulletHitReg_body_entered"]
+[connection signal="timeout" from="SelfCollideTimer" to="." method="_on_SelfCollideTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_DespawnTimer_timeout"]

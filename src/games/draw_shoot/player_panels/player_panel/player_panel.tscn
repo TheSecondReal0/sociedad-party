@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/draw_shoot/player_panels/player_panel/player_panel.gd" type="Script" id=1]
+
+[node name="player_panel" type="VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Label" parent="."]
+margin_right = 100.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+text = "player name"
+align = 1
+valign = 1
+
+[node name="health" type="Label" parent="."]
+margin_top = 20.0
+margin_right = 100.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+text = "HP: 3"
+align = 1
+valign = 1
+
+[node name="action0" type="Label" parent="."]
+margin_top = 40.0
+margin_right = 100.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+align = 1
+valign = 1
+
+[node name="action1" type="Label" parent="."]
+margin_top = 60.0
+margin_right = 100.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+align = 1
+valign = 1
+
+[node name="action2" type="Label" parent="."]
+margin_top = 80.0
+margin_right = 100.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+align = 1
+valign = 1

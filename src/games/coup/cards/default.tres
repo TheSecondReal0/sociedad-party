@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://games/coup/resources/coupcard.gd" type="Script" id=1]
+[ext_resource path="res://games/coup/actions/foreign_aid.tres" type="Resource" id=2]
+[ext_resource path="res://games/coup/actions/coup.tres" type="Resource" id=3]
+[ext_resource path="res://games/coup/actions/income.tres" type="Resource" id=4]
+
+[resource]
+resource_name = "Default"
+script = ExtResource( 1 )
+name = "Default"
+color = Color( 0, 0, 0, 1 )
+desc = "Implied role of the player. Not meant to be seen in gameplay."
+actions = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ]
+blocks = [  ]

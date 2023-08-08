@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://games/coup/main/coup_main.gd" type="Script" id=1]
+[ext_resource path="res://games/coup/actions/foreign_aid.tres" type="Resource" id=2]
+[ext_resource path="res://games/coup/actions/coup.tres" type="Resource" id=3]
+[ext_resource path="res://games/coup/actions/exchange.tres" type="Resource" id=4]
+[ext_resource path="res://games/coup/actions/assassinate.tres" type="Resource" id=5]
+[ext_resource path="res://games/coup/actions/steal.tres" type="Resource" id=6]
+[ext_resource path="res://games/coup/actions/tax.tres" type="Resource" id=7]
+[ext_resource path="res://games/coup/actions/income.tres" type="Resource" id=8]
+[ext_resource path="res://games/coup/main/coup_data.gd" type="Script" id=9]
+[ext_resource path="res://games/coup/main/coup_ui.gd" type="Script" id=10]
+[ext_resource path="res://games/coup/ui/common/panels/outline.tres" type="StyleBox" id=11]
+[ext_resource path="res://games/coup/ui/action_buttons/action_buttons.tscn" type="PackedScene" id=12]
+[ext_resource path="res://games/coup/ui/player_cards/player_cards.tscn" type="PackedScene" id=13]
+
+[node name="coup_main" type="CanvasLayer"]
+script = ExtResource( 1 )
+action_order = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 3 ) ]
+
+[node name="coup_data" type="Node" parent="."]
+script = ExtResource( 9 )
+cards_dir = "res://games/coup/cards"
+implied_card = "res://games/coup/cards/default.tres"
+actions_dir = "res://games/coup/actions"
+action_order = [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 3 ) ]
+
+[node name="coup_ui" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player_cards" parent="coup_ui" instance=ExtResource( 13 )]
+
+[node name="action_buttons" parent="coup_ui" instance=ExtResource( 12 )]
+anchor_left = 0.3
+
+[node name="history" type="PanelContainer" parent="coup_ui"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+custom_styles/panel = ExtResource( 11 )
+
+[node name="MarginContainer" type="MarginContainer" parent="coup_ui/history"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 692.8
+margin_bottom = 454.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="coup_ui/history/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 682.0
+margin_bottom = 444.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="coup_ui/history/MarginContainer/ScrollContainer"]
+margin_right = 677.0
+margin_bottom = 439.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

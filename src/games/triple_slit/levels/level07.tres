@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://games/triple_slit/triple_slit_level/tripleslitlevel.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+desc = "Transmit 1 lower case letter"
+button_amount = 30
+info_template = {
+"Letter": [  ]
+}

@@ -1,0 +1,138 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://games/triple_slit/triple_slit_main/button_grid.gd" type="Script" id=1]
+[ext_resource path="res://assets/common/textures/square.png" type="Texture" id=2]
+[ext_resource path="res://games/triple_slit/triple_slit_main/triple_slit_main.gd" type="Script" id=3]
+[ext_resource path="res://games/triple_slit/triple_slit_main/info_display.gd" type="Script" id=4]
+[ext_resource path="res://games/triple_slit/triple_slit_main/timer.gd" type="Script" id=5]
+
+[node name="triple_slit_main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_desc" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 500, 40 )
+text = "aaaaaaa"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 50.0
+margin_right = -10.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info_display" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 134.0
+margin_bottom = 24.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/info_display"]
+margin_right = 134.0
+margin_bottom = 24.0
+
+[node name="info_name" type="Label" parent="VBoxContainer/info_display/HBoxContainer"]
+margin_top = 5.0
+margin_right = 60.0
+margin_bottom = 19.0
+text = "Number: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/info_display/HBoxContainer"]
+margin_left = 64.0
+margin_right = 122.0
+margin_bottom = 24.0
+
+[node name="info_value" type="Label" parent="VBoxContainer/info_display/HBoxContainer"]
+margin_left = 126.0
+margin_top = 5.0
+margin_right = 134.0
+margin_bottom = 19.0
+text = "5"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 28.0
+margin_right = 134.0
+margin_bottom = 48.0
+text = "Submit"
+
+[node name="button_grid" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 300.0
+margin_right = -10.0
+margin_bottom = -10.0
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/vseparation = 30
+columns = 10
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ready_button" type="Button" parent="."]
+margin_left = 482.0
+margin_top = 50.0
+margin_right = 542.0
+margin_bottom = 70.0
+text = "Ready"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="TextureProgress" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 260.0
+margin_right = -10.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 1004, 0 )
+max_value = 30000.0
+value = 3000.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 2 )
+tint_under = Color( 0, 0, 0, 1 )
+nine_patch_stretch = true
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="timer"]
+anchor_left = 0.25
+anchor_right = 0.25
+margin_left = -5.0
+margin_right = 5.0
+margin_bottom = 30.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="timer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -5.0
+margin_right = 5.0
+margin_bottom = 30.0
+color = Color( 0, 1, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="timer"]
+anchor_left = 0.75
+anchor_right = 0.75
+margin_left = -5.0
+margin_right = 5.0
+margin_bottom = 30.0
+color = Color( 0, 0, 1, 1 )

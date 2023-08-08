@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/conways_war/ui/setting_scenes/bool/bool.gd" type="Script" id=1]
+
+[node name="bool" type="HBoxContainer"]
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Label" parent="."]
+margin_top = 13.0
+margin_right = 52.0
+margin_bottom = 27.0
+mouse_filter = 1
+text = "asdfasdf"
+
+[node name="spacer" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 13.0
+margin_right = 56.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+
+[node name="toggle" type="CheckButton" parent="."]
+margin_left = 60.0
+margin_right = 136.0
+margin_bottom = 40.0
+pressed = true
+
+[connection signal="pressed" from="toggle" to="." method="_on_toggle_pressed"]

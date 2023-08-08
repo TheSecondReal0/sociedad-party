@@ -1,0 +1,215 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://games/pawn_game/maps/test/test.gd" type="Script" id=1]
+[ext_resource path="res://games/pawn_game/pawns/pawn_basic/pawn_basic.tscn" type="PackedScene" id=2]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 998.259, 262.372, 1024.33, -0.827377, 1024.33, 600.414, 984.805, 216.123, 961.26, 181.646, 939.396, 140.442, 941.919, 285.917, 844.375, 474.277, 841.853, 412.051, 841.012, 368.325, 894.829, 290.963, 817.467, 359.916, 680.401, 216.964, 685.446, 184.169, 841.853, 148.01, 852.784, 179.124, 864.557, 222.009, 909.124, 108.488, 882.215, 74.8527, 823.353, 79.898, 832.603, 113.534, 664.424, 157.26, 815.785, 502.868, 729.173, 499.504, -0.722595, 599.573, 590.425, 503.709, 449.996, 505.391, 39.6394, 588.639, 274.249, 250.6, 310.407, 217.805, 490.359, 178.283, 484.473, 207.714, 256.59, 364.961, 234.727, 290.122, 297.794, 181.646, 875.488, 258.168, 758.604, 359.916, 861.193, 52.9894, 648.447, 362.439, 625.743, 253.122, 457.564, 364.12, 584.539, 264.054, 534.085, 254.804, 502.972, 232.1, 89.2522, 359.075, 182.591, 248.077, 144.751, 210.237, 639.197, 135.397, 624.061, 92.5115, 835.966, 42.0578, 592.948, 54.6712, 121.206, 168.192, 71.5934, 375.893, 539.972, 122.784, 516.427, 153.056, 262.476, 163.147, 254.908, 137.92, 266.681, 116.897, 285.181, 88.307, 564.357, 85.7843, 251.545, 58.8757, -0.722595, -0.827377, 193.523, 42.0578, 107.752, 132.874, 62.3435, 414.574, 94.2975, 567.617, 132.138, 539.867, 187.637, 511.277, 295.271, 504.55, 137.183, 87.4661, 52.2528, 458.3, 42.1621, 521.368 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 1, 0, 3 ), PoolIntArray( 1, 3, 4, 5 ), PoolIntArray( 6, 0, 2, 7, 8, 9 ), PoolIntArray( 10, 6, 9, 11 ), PoolIntArray( 12, 13, 14, 15, 16 ), PoolIntArray( 1, 5, 17, 18 ), PoolIntArray( 19, 20, 14, 13, 21 ), PoolIntArray( 22, 7, 2 ), PoolIntArray( 23, 22, 2, 24, 25 ), PoolIntArray( 26, 25, 24, 27 ), PoolIntArray( 28, 29, 30, 31, 32, 33 ), PoolIntArray( 30, 29, 34 ), PoolIntArray( 12, 35, 10, 11, 36 ), PoolIntArray( 1, 18, 37 ), PoolIntArray( 12, 16, 35 ), PoolIntArray( 12, 36, 38, 39 ), PoolIntArray( 39, 38, 40, 41 ), PoolIntArray( 42, 41, 40 ), PoolIntArray( 43, 42, 40, 32 ), PoolIntArray( 31, 43, 32 ), PoolIntArray( 33, 32, 44, 45 ), PoolIntArray( 46, 45, 44 ), PoolIntArray( 19, 21, 47, 48, 49 ), PoolIntArray( 49, 48, 50 ), PoolIntArray( 51, 46, 44, 52 ), PoolIntArray( 53, 54, 30, 34, 55, 56, 57, 58, 59 ), PoolIntArray( 50, 59, 58, 60 ), PoolIntArray( 1, 37, 49 ), PoolIntArray( 61, 1, 49, 50, 62 ), PoolIntArray( 63, 51, 52, 64, 24, 61 ), PoolIntArray( 65, 66, 67, 68, 26 ), PoolIntArray( 50, 60, 62 ), PoolIntArray( 61, 62, 69 ), PoolIntArray( 61, 69, 63 ), PoolIntArray( 24, 64, 70 ), PoolIntArray( 24, 70, 71 ), PoolIntArray( 24, 71, 27 ), PoolIntArray( 26, 27, 65 ) ]
+outlines = [ PoolVector2Array( -0.722595, -0.827377, -0.722595, 599.573, 1024.33, 600.414, 1024.33, -0.827377 ), PoolVector2Array( 193.523, 42.0578, 137.183, 87.4661, 107.752, 132.874, 121.206, 168.192, 144.751, 210.237, 182.591, 248.077, 234.727, 290.122, 274.249, 250.6, 310.407, 217.805, 297.794, 181.646, 262.476, 163.147, 254.908, 137.92, 266.681, 116.897, 285.181, 88.307, 251.545, 58.8757 ), PoolVector2Array( 502.972, 232.1, 484.473, 207.714, 490.359, 178.283, 516.427, 153.056, 539.972, 122.784, 564.357, 85.7843, 592.948, 54.6712, 624.061, 92.5115, 639.197, 135.397, 664.424, 157.26, 685.446, 184.169, 680.401, 216.964, 625.743, 253.122, 584.539, 264.054, 534.085, 254.804 ), PoolVector2Array( 823.353, 79.898, 835.966, 42.0578, 861.193, 52.9894, 882.215, 74.8527, 909.124, 108.488, 939.396, 140.442, 961.26, 181.646, 984.805, 216.123, 998.259, 262.372, 941.919, 285.917, 894.829, 290.963, 875.488, 258.168, 864.557, 222.009, 852.784, 179.124, 841.853, 148.01, 832.603, 113.534 ), PoolVector2Array( 841.853, 412.051, 841.012, 368.325, 817.467, 359.916, 758.604, 359.916, 648.447, 362.439, 457.564, 364.12, 256.59, 364.961, 89.2522, 359.075, 71.5934, 375.893, 62.3435, 414.574, 52.2528, 458.3, 42.1621, 521.368, 39.6394, 588.639, 94.2975, 567.617, 132.138, 539.867, 187.637, 511.277, 295.271, 504.55, 449.996, 505.391, 590.425, 503.709, 729.173, 499.504, 815.785, 502.868, 844.375, 474.277 ) ]
+
+[node name="test" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Navigation2D"]
+polygon = PoolVector2Array( 197, 68, 130, 129, 232, 259, 283, 204, 209, 156, 260, 93 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="Navigation2D"]
+polygon = PoolVector2Array( 592.566, 83.9873, 508.09, 203.859, 578.88, 250.581, 664.773, 201.972 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="Navigation2D"]
+polygon = PoolVector2Array( 847.412, 67.9415, 907.82, 266.627, 969.644, 244.446 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="Navigation2D"]
+polygon = PoolVector2Array( 60.2213, 566.779, 103.64, 381.78, 815.793, 392.634, 818.624, 473.807, 159.8, 483.718 )
+
+[node name="Line2D" type="Line2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="pawns" type="Node2D" parent="."]
+
+[node name="pawn_basic" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+debug_pawn = true
+
+[node name="pawn_basic2" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic3" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic4" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic5" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic6" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic7" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic8" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic9" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic10" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic11" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic12" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic13" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic14" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic15" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic16" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic17" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic18" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic19" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic20" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic21" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic22" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic23" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic24" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic25" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic26" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic27" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic28" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic29" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic30" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic31" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic32" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic33" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic34" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic35" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic36" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic37" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic38" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic39" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic40" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic41" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic42" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic43" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic44" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic45" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic46" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic47" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic48" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic49" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic50" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic51" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic52" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic53" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic54" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic55" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic56" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic57" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic58" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+
+[node name="pawn_basic59" parent="pawns" instance=ExtResource( 2 )]
+position = Vector2( 453.361, 322.077 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

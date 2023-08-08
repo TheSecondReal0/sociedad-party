@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/2d_mad_max_redux/assets/maps/procedural/procedural.gd" type="Script" id=1]
+
+[node name="procedural" type="Node2D"]
+script = ExtResource( 1 )

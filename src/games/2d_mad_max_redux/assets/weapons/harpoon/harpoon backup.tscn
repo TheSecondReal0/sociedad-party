@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://games/2d_mad_max_original/assets/weapons/harpoon/harpoon.gd" type="Script" id=1]
+[ext_resource path="res://games/2d_mad_max_original/assets/weapons/harpoon/rope.gd" type="Script" id=2]
+
+[node name="harpoon" type="DampedSpringJoint2D"]
+bias = 0.9
+disable_collision = false
+script = ExtResource( 1 )
+
+[node name="left" type="RayCast2D" parent="."]
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 200, 0 )
+
+[node name="forward" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 200, 0 )
+
+[node name="right" type="RayCast2D" parent="."]
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( 200, 0 )
+
+[node name="rope" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="ropeBeg" type="PinJoint2D" parent="rope"]
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="rope"]
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="rope"]
+
+[node name="ropeEnd" type="PinJoint2D" parent="rope"]
+
+[node name="Node" type="Node" parent="."]
+[connection signal="ready" from="Node" to="." method="_on_Node_ready"]

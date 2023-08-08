@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/pawn_game/map_components/tile_nav/tile_nav_base/tile_nav_base.gd" type="Script" id=1]
+
+[node name="tile_nav_base" type="Navigation2D"]
+script = ExtResource( 1 )

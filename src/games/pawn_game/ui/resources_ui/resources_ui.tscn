@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/pawn_game/ui/resources_ui/resources_ui.gd" type="Script" id=1]
+
+[node name="resources_ui" type="VBoxContainer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gold" type="Label" parent="."]
+margin_right = 100.0
+margin_bottom = 14.0
+text = "Gold: 0"
+align = 2

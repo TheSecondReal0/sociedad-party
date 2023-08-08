@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://games/coup/resources/coupaction.gd" type="Script" id=1]
+
+[resource]
+resource_name = "Exchange"
+script = ExtResource( 1 )
+name = "Exchange"
+color = Color( 0.247059, 0.74902, 0.247059, 1 )
+action_text = "%u exchanged cards with the deck"
+desc = "Exchange cards with the deck."
+used_on_player = false
+shuffle_after = false
+coin_cost = 0
+free_coins = 0
+steal_coins = 0
+exchange_cards_picked = 2
+reveal_card = false

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/apgi/resources/game_info/gameinfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+game_name = "Reaper"
+game_description = ""
+rounds = 1
+timer = false
+main_scene_path = "res://games/reaper/main/reapermain.tscn"
+unique_server_main = false
+server_main_scene_path = ""

@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( -600, 10 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 512, 600 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -600, -10, 600, -10, 600, 10, -600, 10 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 924, 300 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -600, -10, 600, -10, 600, 10, -600, 10 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 100, -200 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D3"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -600, -10, 600, -10, 600, 10, -600, 10 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 512, 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D4"]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -600, -10, 600, -10, 600, 10, -600, 10 )

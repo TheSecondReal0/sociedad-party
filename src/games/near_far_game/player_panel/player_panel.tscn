@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/near_far_game/player_panel/player_panel.gd" type="Script" id=1]
+
+[node name="player_panel" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Name"
+align = 1
+
+[node name="health" type="Label" parent="."]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 32.0
+text = "10 HP"
+align = 1
+
+[node name="near_attack" type="Label" parent="."]
+margin_top = 36.0
+margin_right = 1024.0
+margin_bottom = 50.0
+text = "Near Attack: 1"
+align = 1
+
+[node name="far_attack" type="Label" parent="."]
+margin_top = 54.0
+margin_right = 1024.0
+margin_bottom = 68.0
+text = "Far Attack: 1"
+align = 1
+
+[node name="near_run" type="Label" parent="."]
+margin_top = 72.0
+margin_right = 1024.0
+margin_bottom = 86.0
+text = "Near Run: 1"
+align = 1
+
+[node name="far_run" type="Label" parent="."]
+margin_top = 90.0
+margin_right = 1024.0
+margin_bottom = 104.0
+text = "Far Run: 1"
+align = 1

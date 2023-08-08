@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://games/2d_mad_max_original/assets/maps/classic/classic.tscn" type="PackedScene" id=1]
+[ext_resource path="res://games/2d_mad_max_redux/assets/main/map.gd" type="Script" id=2]
+[ext_resource path="res://games/2d_mad_max_redux/assets/main/main.gd" type="Script" id=3]
+
+[node name="main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="players" type="Node2D" parent="."]
+
+[node name="map" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="classic" parent="map" instance=ExtResource( 1 )]
