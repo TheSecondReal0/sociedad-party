@@ -1,10 +1,10 @@
-tool
+@tool
 extends Resource
 
 #class_name Interact
 
 enum type {task = 0, ui = 1, map = 2}
-export(type) var interact_type
+@export var interact_type: type
 
 #needed to instance new unique resources in editor
 var base_task_resource:Resource = ResourceLoader.load("res://addons/opensusinteraction/resources/interacttask/interacttask.tres")
@@ -57,7 +57,7 @@ func get_interact_data(_from: Node = null) -> Dictionary:
 
 func _init():
 	#ensures customizing this resource won't change other resources
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		resource_local_to_scene = true
 
 #EDITOR STUFF BELOW THIS POINT, DO NOT TOUCH UNLESS YOU KNOW WHAT YOU'RE DOING
@@ -89,7 +89,7 @@ func _set(property, value):
 			else:
 				#create new map interact resource
 				map_res = base_map_resource.duplicate()
-	property_list_changed_notify()
+	notify_property_list_changed()
 	return true
 
 #overrides get(), for property groups and to display custom/fake properties/vars

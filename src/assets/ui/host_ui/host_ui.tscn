@@ -14,10 +14,10 @@ __meta__ = {
 }
 
 [node name="OptionButton" type="OptionButton" parent="."]
-margin_left = -260.0
-margin_top = -40.0
-margin_right = -120.0
-margin_bottom = -10.0
+offset_left = -260.0
+offset_top = -40.0
+offset_right = -120.0
+offset_bottom = -10.0
 grow_horizontal = 0
 size_flags_horizontal = 3
 text = "Choose Game"
@@ -26,8 +26,8 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = -110.0
-margin_top = -40.0
-margin_right = -10.0
-margin_bottom = -10.0
+offset_left = -110.0
+offset_top = -40.0
+offset_right = -10.0
+offset_bottom = -10.0
 text = "Switch Game"

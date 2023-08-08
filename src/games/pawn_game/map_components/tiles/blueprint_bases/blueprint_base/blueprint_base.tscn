@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://games/pawn_game/map_components/tiles/blueprint_bases/blueprint_base/blueprint_base.gd" type="Script" id=1]
-[ext_resource path="res://games/pawn_game/common/shaders/greyscale_with_mod.tres" type="Material" id=2]
-
-[node name="blueprint_base" type="Sprite"]
-modulate = Color( 1, 1, 1, 0.498039 )
-material = ExtResource( 2 )
-script = ExtResource( 1 )

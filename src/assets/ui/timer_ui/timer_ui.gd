@@ -1,6 +1,6 @@
 extends Control
 
-onready var timer = $Timer
+@onready var timer = $Timer
 
 # time in seconds between game setup and game start
 var starting_time: int = 3
@@ -8,10 +8,10 @@ var current_time: int = starting_time
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timer.connect("timeout", self, "on_timer_timeout")
+	timer.connect("timeout", Callable(self, "on_timer_timeout"))
 
 func start_game():
-	if get_tree().is_network_server():
+	if Network.is_server():
 		GameManager.start_game()
 	UIManager.close_ui("res://assets/ui/timer_ui/timer_ui.tscn")
 	close()

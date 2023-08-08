@@ -18,14 +18,14 @@ var interact_ui_node: Node
 
 var ui_controller_node: Node
 
-signal open_ui(ui_name, ui_data, reinstance)
-signal close_ui(ui_name, free)
-signal instance_ui(ui_name, ui_data)
-signal free_ui(ui_name)
+signal open_ui_signal(ui_name, ui_data, reinstance)
+signal close_ui_signal(ui_name, free)
+signal instance_ui_signal(ui_name, ui_data)
+signal free_ui_signal(ui_name)
 
 func _ready():
 	# make it so when the game is paused, this script still runs
-	pause_mode = PAUSE_MODE_PROCESS
+	process_mode = PROCESS_MODE_ALWAYS
 	pass
 
 #ui data is data to pass to the ui, such as a task identifier
@@ -34,23 +34,23 @@ func open_ui(ui_path: String, ui_data: Dictionary = {}, reinstance: bool = false
 	#print("signalling to open ", menuName)
 #	if not ui_list.keys().has(ui_name):
 #		push_error("open_ui() called with invalid ui name " + ui_name)
-	emit_signal("open_ui", ui_path, ui_data, reinstance)
+	emit_signal("open_ui_signal", ui_path, ui_data, reinstance)
 
 func close_ui(ui_path: String, free: bool = false):
 #	if not ui_list.keys().has(ui_name):
 #		push_error("close_ui() called with invalid ui name " + ui_name)
-	emit_signal("close_ui", ui_path, free)
+	emit_signal("close_ui_signal", ui_path, free)
 
 func instance_ui(ui_path: String, ui_data: Dictionary = {}):
 #	print("instance ui ", ui_path)
 #	if not ui_list.keys().has(ui_name):
 #		push_error("instance_ui() called with invalid ui name " + ui_name)
-	emit_signal("instance_ui", ui_path, ui_data)
+	emit_signal("instance_ui_signal", ui_path, ui_data)
 
 func free_ui(ui_path: String):
 #	if not ui_list.keys().has(ui_name):
 #		push_error("free_ui() called with invalid ui name " + ui_name)
-	emit_signal("free_ui", ui_path)
+	emit_signal("free_ui_signal", ui_path)
 
 func get_ui(ui_path: String):
 #	if not ui_list.keys().has(ui_name):
@@ -69,7 +69,7 @@ func ui_opened(menuName):
 func ui_closed(menuName):
 	open_uis.erase(menuName)
 	just_closed = menuName
-	if not open_uis.empty():
+	if not open_uis.is_empty():
 		current_ui = get_ui(open_uis[-1])
 
 # warning-ignore:unused_argument
@@ -82,7 +82,7 @@ func state_changed(old_state, new_state):
 	pass
 
 func in_ui() -> bool:
-	return not open_uis.empty()
+	return not open_uis.is_empty()
 
 func get_interact_ui_node():
 	return interact_ui_node

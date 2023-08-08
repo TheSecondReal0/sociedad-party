@@ -16,39 +16,39 @@ __meta__ = {
 [node name="verticalButtons" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 3.05176e-05
-custom_constants/separation = 25
+offset_right = 3.05176e-05
+theme_override_constants/separation = 25
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Resume" type="Button" parent="verticalButtons"]
-margin_top = 78.0
-margin_right = 384.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 0, 50 )
+offset_top = 78.0
+offset_right = 384.0
+offset_bottom = 128.0
+custom_minimum_size = Vector2( 0, 50 )
 text = "Resume"
 
 [node name="Options" type="Button" parent="verticalButtons"]
-margin_top = 153.0
-margin_right = 384.0
-margin_bottom = 203.0
-rect_min_size = Vector2( 0, 50 )
+offset_top = 153.0
+offset_right = 384.0
+offset_bottom = 203.0
+custom_minimum_size = Vector2( 0, 50 )
 text = "Options (WIP)"
 
 [node name="Leave" type="Button" parent="verticalButtons"]
-margin_top = 228.0
-margin_right = 384.0
-margin_bottom = 278.0
-rect_min_size = Vector2( 0, 50 )
+offset_top = 228.0
+offset_right = 384.0
+offset_bottom = 278.0
+custom_minimum_size = Vector2( 0, 50 )
 text = "Leave"
 
 [node name="Quit" type="Button" parent="verticalButtons"]
-margin_top = 303.0
-margin_right = 384.0
-margin_bottom = 353.0
-rect_min_size = Vector2( 0, 50 )
+offset_top = 303.0
+offset_right = 384.0
+offset_bottom = 353.0
+custom_minimum_size = Vector2( 0, 50 )
 text = "Quit"
 [connection signal="pressed" from="verticalButtons/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="verticalButtons/Leave" to="." method="_on_Leave_pressed"]

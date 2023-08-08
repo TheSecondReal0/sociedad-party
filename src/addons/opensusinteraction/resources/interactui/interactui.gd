@@ -1,17 +1,17 @@
-tool
+@tool
 extends Resource
 
 class_name InteractUI
 
 #name of the UI to open
-export(String, FILE, "*.tscn") var ui_path
+@export_file("*.tscn") var ui_path # (String, FILE, "*.tscn")
 #data to pass to the UI node
-export(Dictionary) var ui_data
+@export var ui_data: Dictionary
 
 enum actions {OPEN, UPDATE, CLOSE}
-export(actions) var action = actions.OPEN
+@export var action: actions = actions.OPEN
 
-export(bool) var free_on_close = false
+@export var free_on_close: bool = false
 
 #changed in the editor via overriding get(), set(), and get_property_list()
 #whether or not to delete and recreate the UI node before opening
@@ -47,7 +47,7 @@ func get_interact_data(_from: Node = null, interact_data: Dictionary = {}) -> Di
 
 func _init():
 	#ensures customizing this resource won't change other resources
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		#print("interactUI init")
 		resource_local_to_scene = true
 

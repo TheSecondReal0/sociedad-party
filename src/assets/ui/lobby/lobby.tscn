@@ -1,0 +1,165 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2ar5f2oeveac"]
+
+[ext_resource type="StyleBox" uid="uid://c2ubow3e2yooy" path="res://assets/ui/lobby/theme/panels/default_border_panel.tres" id="1_4uviy"]
+[ext_resource type="Script" path="res://assets/ui/lobby/lobby.gd" id="1_chgh2"]
+[ext_resource type="Script" path="res://assets/ui/lobby/player_list.gd" id="1_o4ukc"]
+[ext_resource type="PackedScene" uid="uid://k8pi0n3kbpke" path="res://assets/ui/lobby/player_bar/player_bar.tscn" id="2_exqvw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ey0t0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+border_width_left = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 20.0
+
+[node name="lobby" type="Control" node_paths=PackedStringArray("vote_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_chgh2")
+vote_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/CenterContainer/Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="player_list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("other_players", "my_color", "my_text")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+script = ExtResource("1_o4ukc")
+other_players = NodePath("MarginContainer/PanelContainer/MarginContainer/ScrollContainer/other_players")
+player_bar_scene = ExtResource("2_exqvw")
+my_color = NodePath("PanelContainer/MarginContainer/HBoxContainer/ColorPickerButton")
+my_text = NodePath("PanelContainer/MarginContainer/HBoxContainer/LineEdit")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_4uviy")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "My Name"
+alignment = 2
+context_menu_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer"]
+z_index = -1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ey0t0")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="other_players" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="player_bar" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/other_players" instance_placeholder="res://ui/lobby/player_bar/player_bar.tscn"]
+layout_mode = 2
+
+[node name="player_bar2" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/other_players" instance_placeholder="res://ui/lobby/player_bar/player_bar.tscn"]
+layout_mode = 2
+
+[node name="player_bar3" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/other_players" instance_placeholder="res://ui/lobby/player_bar/player_bar.tscn"]
+layout_mode = 2
+
+[node name="player_bar4" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/other_players" instance_placeholder="res://ui/lobby/player_bar/player_bar.tscn"]
+layout_mode = 2
+
+[node name="player_bar5" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/other_players" instance_placeholder="res://ui/lobby/player_bar/player_bar.tscn"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_4uviy")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/CenterContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+toggle_mode = true
+text = "Ready! (0/0)"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_4uviy")
+
+[connection signal="color_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/PanelContainer/MarginContainer/HBoxContainer/ColorPickerButton" to="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list" method="_on_color_picker_button_color_changed"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list/PanelContainer/MarginContainer/HBoxContainer/LineEdit" to="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/player_list" method="_on_line_edit_text_changed"]
