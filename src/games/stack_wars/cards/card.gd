@@ -6,6 +6,7 @@ var title: String = "Super card deluxe"
 var description: String = "This card will instantly make you win the game like super ez"
 var turn_constraint: String = ">=2"
 
+var played_by_id: int = 0
 var owner_id: int = 0
 var stack_index: int = -1
 
