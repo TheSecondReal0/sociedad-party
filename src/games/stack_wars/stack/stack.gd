@@ -36,9 +36,30 @@ func reverse():
 	cards.reverse()
 	index_cards()
 
+func is_targetable(card: StackWars_Card) -> bool:
+	for c in cards:
+		if not c.is_targetable(card):
+			return false
+	return true
+
+func is_movable(card: StackWars_Card) -> bool:
+	for c in cards:
+		if not c.is_movable(card):
+			return false
+	return true
+	
+	return true
+
+func is_removable(card: StackWars_Card) -> bool:
+	for c in cards:
+		if not c.is_targetable(card):
+			return false
+	return true
+
 
 func index_cards():
 	var index: int = 0
 	for card in cards:
 		card.stack_index = index
 		index += 1
+
