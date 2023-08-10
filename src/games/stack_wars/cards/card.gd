@@ -54,3 +54,6 @@ func is_removable(card: StackWars_Card) -> bool:
 	if !removable:
 		return false
 	return true
+
+func is_playable(card: StackWars_Card, cards_on_stack: int, player_id: int) -> bool:
+	return true
