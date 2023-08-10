@@ -26,3 +26,17 @@ func resolve():
 func remove():
 	pass
 
+func is_targetable() -> bool:
+	if !targetable:
+		return false
+	return true
+
+func is_movable() -> bool:
+	if !movable:
+		return false
+	return true
+
+func is_removable() -> bool:
+	if !removable:
+		return false
+	return true
