@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://d02hjxa3st64"]
+
+[ext_resource type="Script" path="res://games/stack_wars/ui/card/card.gd" id="1_ah7ib"]
+[ext_resource type="Texture2D" uid="uid://wm0oankl0gs5" path="res://common/textures/squares/square.png" id="2_crwgr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n704n"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="card" type="PanelContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint")]
+offset_right = 150.0
+offset_bottom = 180.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n704n")
+script = ExtResource("1_ah7ib")
+title = NodePath("MarginContainer/VBoxContainer/title")
+texture = NodePath("MarginContainer/VBoxContainer/texture")
+description = NodePath("MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "title text"
+horizontal_alignment = 1
+
+[node name="texture" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_crwgr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="description" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is some example description text"
+fit_content = true
+
+[node name="turn_constraint" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = ">=2"
