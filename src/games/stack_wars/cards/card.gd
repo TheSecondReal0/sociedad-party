@@ -1,6 +1,6 @@
 extends Resource
 
-class_name Card
+class_name StackWars_Card
 
 @export var title: String = "Default Title"
 @export var description: String = "This is a sample description meant to test strings of certain length."
@@ -8,6 +8,8 @@ class_name Card
 @export var targetable: bool = true
 @export var movable: bool = true
 @export var removable: bool = true
+
+
 
 var played_by_id: int = 0
 var owner_id: int = 0
@@ -34,6 +36,7 @@ func is_targetable() -> bool:
 func is_movable() -> bool:
 	if !movable:
 		return false
+	
 	return true
 
 func is_removable() -> bool:

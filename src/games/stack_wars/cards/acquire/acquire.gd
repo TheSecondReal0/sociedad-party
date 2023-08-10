@@ -1,6 +1,6 @@
-extends Card
+extends StackWars_Card
 
-class_name Acquire
+class_name StackWars_Acquire
 
 
 

@@ -1,6 +1,6 @@
-extends Node
+extends RefCounted
 
-class_name Stack
+class_name StackWars_Stack
 
 var cards: Array[Card] = []
 
