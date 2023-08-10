@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Acquire" load_steps=2 format=3 uid="uid://bqhiy31rka578"]
 
-[ext_resource type="Script" path="res://games/stack_wars/cards/acquire/acquire.gd" id="1_sru71"]
+[ext_resource type="Script" path="res://games/stack_wars/cards/scripts/acquire.gd" id="1_sru71"]
 
 [resource]
 script = ExtResource("1_sru71")
