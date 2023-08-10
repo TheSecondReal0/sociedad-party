@@ -2,22 +2,25 @@ extends RefCounted
 
 class_name StackWars_Stack
 
-var cards: Array[Card] = []
+var cards: Array[StackWars_Card] = []
 
 
-func add_card(card: Card, index: int = -1):
+func _init():
+	pass
+
+func add_card(card: StackWars_Card, index: int = -1):
 	if index == -1:
 		cards.append(card)
 
-func remove_card(card: Card):
+func remove_card(card: StackWars_Card):
 	cards.erase(card)
 
 func resolve_next_card():
-	var card: Card = cards.back()
+	var card: StackWars_Card = cards.back()
 	cards.pop_back()
 	card.resolve()
 
-func move_card(card: Card, index: int):
+func move_card(card: StackWars_Card, index: int):
 	cards.erase(card)
 	cards.insert(index, card)
 
