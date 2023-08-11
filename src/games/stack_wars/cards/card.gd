@@ -14,6 +14,7 @@ var helper: StackWars_Helper = null
 var played_by_id: int = 0
 var owner_id: int = 0
 var stack_index: int = -1
+var played_on_turn: int = -1
 
 
 func _init(id: int, help: StackWars_Helper):
