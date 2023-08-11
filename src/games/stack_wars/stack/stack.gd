@@ -16,6 +16,7 @@ func add_card(card: StackWars_Card, index: int = -1):
 	else:
 		cards.insert(index, card)
 	index_cards()
+	card.play()
 
 func remove_card(card: StackWars_Card):
 	cards.erase(card)
