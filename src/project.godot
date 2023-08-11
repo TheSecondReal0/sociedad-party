@@ -24,6 +24,8 @@ Helpers="*res://autoload/helpers.gd"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
