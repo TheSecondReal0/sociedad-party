@@ -4,6 +4,7 @@ extends ScrollContainer
 @export var card_container: Container
 
 signal card_selected(card: StackWars_Card)
+signal card_deselected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
