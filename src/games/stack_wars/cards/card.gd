@@ -6,7 +6,9 @@ var helper: StackWars_Helper = null
 
 @export var title: String = "Default Title"
 @export var description: String = "This is a sample description meant to test strings of certain length."
-@export var turn_constraint: String = ">=2"
+enum TURN_CONSTRAINT_TYPES {NONE, EQUAL, LESS_EQUAL, GREATER_EQUAL}
+@export var turn_constraint_type: TURN_CONSTRAINT_TYPES = TURN_CONSTRAINT_TYPES.NONE
+@export var turn_constraint_num: int = 0
 @export var targetable: bool = true
 @export var movable: bool = true
 @export var removable: bool = true
@@ -58,3 +60,17 @@ func is_removable(card: StackWars_Card) -> bool:
 
 func is_playable(card: StackWars_Card, player_id: int) -> bool:
 	return true
+
+func matches_turn_constraint(turn: int) -> bool:
+	match turn_constraint_type:
+		TURN_CONSTRAINT_TYPES.NONE:
+			return true
+		TURN_CONSTRAINT_TYPES.EQUAL:
+			return turn == turn_constraint_num
+		TURN_CONSTRAINT_TYPES.LESS_EQUAL:
+			return turn <= turn_constraint_num
+		TURN_CONSTRAINT_TYPES.GREATER_EQUAL:
+			return turn >= turn_constraint_num
+		_:
+			assert(false, "Should not be reachable")
+			return false

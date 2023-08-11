@@ -1,0 +1,127 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci1hw41i1rupn"]
+
+[ext_resource type="Script" path="res://games/stack_wars/ui/stack/stack.gd" id="1_3eihc"]
+[ext_resource type="PackedScene" uid="uid://d02hjxa3st64" path="res://games/stack_wars/ui/card/card.tscn" id="1_273ps"]
+
+[node name="stack" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+vertical_scroll_mode = 0
+script = ExtResource("1_3eihc")
+
+[node name="VBoxContainer" type="FlowContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+vertical = true
+
+[node name="card" parent="VBoxContainer" instance=ExtResource("1_273ps")]
+layout_mode = 2
+
+[node name="card2" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card3" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card4" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card5" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card6" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card7" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card8" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card9" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card10" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card11" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card12" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card13" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card14" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card15" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
+
+[node name="card16" parent="VBoxContainer" node_paths=PackedStringArray("title", "texture", "description", "turn_constraint") instance=ExtResource("1_273ps")]
+layout_mode = 2
+title = NodePath("../card/MarginContainer/VBoxContainer/title")
+texture = NodePath("../card/MarginContainer/VBoxContainer/texture")
+description = NodePath("../card/MarginContainer/VBoxContainer/description")
+turn_constraint = NodePath("../card/MarginContainer/VBoxContainer/turn_constraint")
