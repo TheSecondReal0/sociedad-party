@@ -1,6 +1,8 @@
 extends Control
 
-var helper: StackWars_Helper = StackWars_Helper.new()
+class_name StackWars_Main
+
+var helper: StackWars_Helper = StackWars_Helper.new(self)
 var players: Dictionary = helper.players
 var stack: StackWars_Stack = helper.stack
 
@@ -16,5 +18,6 @@ func setup():
 func start_game():
 	pass
 
-
+func end_turn(id: int):
+	pass
 
