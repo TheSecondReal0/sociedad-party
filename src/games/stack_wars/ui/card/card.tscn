@@ -53,3 +53,5 @@ fit_content = true
 [node name="turn_constraint" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = ">=2"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
