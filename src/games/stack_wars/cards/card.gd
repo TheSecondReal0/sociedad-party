@@ -13,8 +13,9 @@ enum TURN_CONSTRAINT_TYPES {NONE, EQUAL, LESS_EQUAL, GREATER_EQUAL}
 @export var movable: bool = true
 @export var removable: bool = true
 
-var played_by_id: int = 0
-var owner_id: int = 0
+var played_by_id: int = -1
+var owner_id: int = -1
+var target_id: int = -1
 var stack_index: int = -1
 var played_on_turn: int = -1
 
