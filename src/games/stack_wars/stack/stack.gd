@@ -6,6 +6,8 @@ var helper: StackWars_Helper = null
 
 var cards: Array[StackWars_Card] = []
 
+var reversed: bool = false
+
 
 func _init(help: StackWars_Helper):
 	helper = help
@@ -23,8 +25,13 @@ func remove_card(card: StackWars_Card):
 	index_cards()
 
 func resolve_next_card():
-	var card: StackWars_Card = cards.back()
-	cards.pop_back()
+	var card: StackWars_Card
+	if reversed:
+		card = cards.front()
+		cards.pop_front()
+	else:
+		card = cards.back()
+		cards.pop_back()
 	card.resolve()
 	index_cards()
 
@@ -34,7 +41,7 @@ func move_card(card: StackWars_Card, index: int):
 	index_cards()
 
 func reverse():
-	cards.reverse()
+	reversed = !reversed
 	index_cards()
 
 func is_targetable(card: StackWars_Card) -> bool:
@@ -56,7 +63,6 @@ func is_removable(card: StackWars_Card) -> bool:
 		if not c.is_targetable(card):
 			return false
 	return true
-
 
 func index_cards():
 	var index: int = 0

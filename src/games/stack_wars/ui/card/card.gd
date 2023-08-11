@@ -15,8 +15,6 @@ func init_card(_card: StackWars_Card) -> void:
 	description.text = card.description
 	turn_constraint.text = card.turn_constraint_num as String
 
-
-
 func _on_gui_input(event: InputEvent):
 	if event.is_action("ui_select"):
 		selected.emit()
