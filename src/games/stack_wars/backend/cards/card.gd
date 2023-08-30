@@ -36,7 +36,7 @@ func resolve():
 func remove():
 	pass
 
-#determines whether this card can be targeted by other cards on the stack
+#determines whether a card can be targeted by other cards on the stack
 func is_targetable(card: StackWars_Card) -> bool:
 	if card != self:
 		return true
@@ -45,7 +45,7 @@ func is_targetable(card: StackWars_Card) -> bool:
 		return false
 	return true
 
-#determines whether this card can be moved up and down the stack
+#determines whether a card can be moved up and down the stack
 func is_movable(card: StackWars_Card) -> bool:
 	if card != self:
 		return true
@@ -55,7 +55,7 @@ func is_movable(card: StackWars_Card) -> bool:
 	
 	return true
 
-#determines whether this card can be removed from the stack
+#determines whether a card can be removed from the stack
 func is_removable(card: StackWars_Card) -> bool:
 	if card != self:
 		return true
@@ -64,8 +64,8 @@ func is_removable(card: StackWars_Card) -> bool:
 		return false
 	return true
 
-#determines whether this card can be played to the stack
-func is_playable(card: StackWars_Card, player_id: int) -> bool:
+#determines whether a card can be played to the stack
+func is_playable(card: StackWars_Card) -> bool:
 	return true
 
 #determines whether this card's turn constraint is met in order to be able to play it

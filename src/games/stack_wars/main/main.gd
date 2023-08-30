@@ -19,5 +19,9 @@ func start_game():
 	pass
 
 func end_turn(id: int):
-	pass
+	if id != helper.current_turn_id:
+		return
+	elif helper.current_turn_player.can_end_turn():
+		helper.current_turn_player.end_turn()
+		helper.inc
 

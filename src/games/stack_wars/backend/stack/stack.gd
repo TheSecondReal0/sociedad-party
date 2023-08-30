@@ -44,6 +44,12 @@ func reverse():
 	reversed = !reversed
 	index_cards()
 
+func is_playable(card: StackWars_Card) -> bool:
+	for c in cards:
+		if not c.is_playable(card):
+			return false
+	return true
+
 func is_targetable(card: StackWars_Card) -> bool:
 	for c in cards:
 		if not c.is_targetable(card):
