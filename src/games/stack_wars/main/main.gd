@@ -9,7 +9,7 @@ var stack: StackWars_Stack = helper.stack
 func _ready():
 	pass
 
-func setup():
+func setup(): #sets up game at first, creates players
 	var ids = Network.clients
 	for id in ids:
 		var player: StackWars_Player = StackWars_Player.new(id, helper)
