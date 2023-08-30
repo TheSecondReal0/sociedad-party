@@ -7,10 +7,10 @@ var id: int = -1
 var name: String = ""
 var color: Color = Color()
 
-var played_cards_on_stack: Array[StackWars_Card] = []
-var owned_cards_on_stack: Array[StackWars_Card] = []
-var targeted_cards_on_stack: Array[StackWars_Card] = []
-var cards_on_stack_num: int = 0
+var played_cards_on_stack: Array[StackWars_Card] = [] #cards that this player played onto the stack
+var owned_cards_on_stack: Array[StackWars_Card] = [] #cards that this player controls on the stack
+var targeted_cards_on_stack: Array[StackWars_Card] = [] #cards on the stack that this player is targeted by
+var cards_on_stack_num: int = 0 #amount of cards that this player played on the stack
 
 
 func _init(playerID: int, help: StackWars_Helper):
@@ -29,7 +29,7 @@ func can_end_turn() -> bool:
 func end_turn():
 	pass
 
-func update_cards_on_stack():
+func update_cards_on_stack(): #check the stack and rebuild player specific card arrays
 	played_cards_on_stack.clear()
 	owned_cards_on_stack.clear()
 	var cards: Array[StackWars_Card] = helper.stack.cards
@@ -38,10 +38,11 @@ func update_cards_on_stack():
 			owned_cards_on_stack.append(card)
 		if card.played_by_id == id:
 			played_cards_on_stack.append(card)
+			cards_on_stack_num += 1
 		if card.target_id == id:
 			targeted_cards_on_stack.append(card)
 
-func reset():
+func reset(): #reset between stacks
 	played_cards_on_stack.clear()
 	owned_cards_on_stack.clear()
 	cards_on_stack_num = 0
