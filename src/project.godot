@@ -137,6 +137,10 @@ ctrl={
 ]
 }
 
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+
 [rendering]
 
 environment/defaults/default_environment="res://default_env.tres"
