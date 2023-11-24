@@ -1,4 +1,4 @@
-
+[gd_scene load_steps=10 format=3 uid="uid://cc8ut2f7vwcwb"]
 
 [ext_resource type="Script" path="res://games/dodge/main/main.gd" id="1_l75uu"]
 [ext_resource type="PackedScene" uid="uid://cuijwapo0nuy8" path="res://games/dodge/objects/cube/cube.tscn" id="1_rp6qn"]
@@ -25,6 +25,9 @@ fog_light_color = Color(0, 0, 0, 1)
 fog_sky_affect = 0.67
 volumetric_fog_density = 0.0
 adjustment_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mo0m"]
+size = Vector3(5, 10, 30)
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_l75uu")
@@ -84,3 +87,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79552, 1.9618, 4.94451)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sfmkw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, 0)
+light_color = Color(1, 0, 0.0235294, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 25.0
+
+[node name="Boost Area" type="Area3D" parent="."]
+gravity_space_override = 3
+gravity_point_center = Vector3(2, -1, 0)
+gravity_direction = Vector3(2, -1, 0)
+gravity = 32.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boost Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9885, 4.65187, 0)
+shape = SubResource("BoxShape3D_4mo0m")
+disabled = true
