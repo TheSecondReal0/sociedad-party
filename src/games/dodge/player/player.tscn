@@ -1,7 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6407j8ywva6t"]
+[gd_scene load_steps=2 format=3 uid="uid://b5tcfdnv0b738"]
 
 [ext_resource type="PackedScene" uid="uid://cwiu8nsyij4gn" path="res://addons/quality-godot-first-person/data/player/player.tscn" id="1_a05yp"]
 
-[node name="player" type="Node3D"]
+[node name="player" instance=ExtResource("1_a05yp")]
 
-[node name="player" parent="." instance=ExtResource("1_a05yp")]
+[node name="camera" parent="head" index="0"]
+current = true

@@ -1,1 +1,4 @@
 /src/.godot
+*.import
+*/*.import
+*.import
