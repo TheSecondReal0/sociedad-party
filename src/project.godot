@@ -33,6 +33,10 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("apgi", "opensusinteraction")
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 ui_accept={
