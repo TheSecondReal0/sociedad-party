@@ -15,7 +15,6 @@ color = Color(0.180392, 1, 0.215686, 1)
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="dodge_object" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_0thie")
 metadata/_edit_lock_ = true
 
