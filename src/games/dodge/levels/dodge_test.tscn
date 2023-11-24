@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsu32r71fxsd8"]
+[gd_scene load_steps=9 format=3 uid="uid://bsu32r71fxsd8"]
 
 [ext_resource type="PackedScene" uid="uid://c6407j8ywva6t" path="res://games/dodge/player/player.tscn" id="1_l7sc1"]
+[ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://addons/quality-godot-first-person/data/sky.exr" id="2_326it"]
+[ext_resource type="PackedScene" uid="uid://bgotcj7d35wu7" path="res://games/dodge/objects/test/test_object.tscn" id="3_nwj6b"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jf87m"]
 size = Vector3(10, 1, 10)
@@ -8,7 +10,17 @@ size = Vector3(10, 1, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1hpra"]
 size = Vector3(10, 1, 10)
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mgpsi"]
+panorama = ExtResource("2_326it")
+
+[sub_resource type="Sky" id="Sky_18bqc"]
+sky_material = SubResource("PanoramaSkyMaterial_mgpsi")
+
 [sub_resource type="Environment" id="Environment_6jaxn"]
+background_mode = 2
+sky = SubResource("Sky_18bqc")
+tonemap_mode = 2
+tonemap_white = 2.0
 
 [node name="dodge_test" type="Node3D"]
 
@@ -25,3 +37,6 @@ shape = SubResource("BoxShape3D_1hpra")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6jaxn")
+
+[node name="test object" parent="." instance=ExtResource("3_nwj6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98042, 2.34894, 2.33571)

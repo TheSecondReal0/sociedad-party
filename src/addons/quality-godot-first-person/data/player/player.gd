@@ -32,6 +32,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	parts.camera.current = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
 	if Input.is_action_pressed("left_shift") and !Input.is_action_pressed("ctrl") and sprint_enabled:
