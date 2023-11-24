@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsu32r71fxsd8"]
+[gd_scene load_steps=11 format=3 uid="uid://bsu32r71fxsd8"]
 
-[ext_resource type="PackedScene" uid="uid://c6407j8ywva6t" path="res://games/dodge/player/player.tscn" id="1_l7sc1"]
+[ext_resource type="PackedScene" uid="uid://b5tcfdnv0b738" path="res://games/dodge/player/player.tscn" id="1_l7sc1"]
 [ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://addons/quality-godot-first-person/data/sky.exr" id="2_326it"]
 [ext_resource type="PackedScene" uid="uid://bgotcj7d35wu7" path="res://games/dodge/objects/test/test_object.tscn" id="3_nwj6b"]
 
@@ -22,6 +22,12 @@ sky = SubResource("Sky_18bqc")
 tonemap_mode = 2
 tonemap_white = 2.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_ulepw"]
+size = Vector3(10, 1, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jw6sc"]
+size = Vector3(10, 1, 25)
+
 [node name="dodge_test" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_l7sc1")]
@@ -40,3 +46,12 @@ environment = SubResource("Environment_6jaxn")
 
 [node name="test object" parent="." instance=ExtResource("3_nwj6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98042, 2.34894, 2.33571)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 8.06502, 13.0399)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="StaticBody3D2"]
+mesh = SubResource("BoxMesh_ulepw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_jw6sc")

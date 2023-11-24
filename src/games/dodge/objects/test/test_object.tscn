@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgotcj7d35wu7"]
+[gd_scene load_steps=7 format=3 uid="uid://bgotcj7d35wu7"]
 
 [ext_resource type="ArrayMesh" uid="uid://c5052jwscdu7h" path="res://games/dodge/objects/test/test object.obj" id="1_4kb7k"]
 [ext_resource type="Texture2D" uid="uid://cv0iiygiin4c0" path="res://games/dodge/objects/test/test_albedo.png" id="2_qvchb"]
@@ -11,8 +11,14 @@ roughness_texture = ExtResource("4_ks01n")
 normal_enabled = true
 normal_texture = ExtResource("3_y2rhd")
 
-[node name="test object" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_15hy7"]
+points = PackedVector3Array(-1, -1, -1.00024, -1, 0.999779, -1.00024, 0.160875, -0.0863656, -1.85237, 0.999991, -1, 1, -1, -1, 1, 0.999991, 0.999779, -1.00024, -1, 0.999779, 1, 1.54223, 1.85172, 0.84867)
+
+[node name="test object" type="RigidBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_4kb7k")
 surface_material_override/0 = SubResource("StandardMaterial3D_i5kqc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_15hy7")
