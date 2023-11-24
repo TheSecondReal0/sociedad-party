@@ -10,7 +10,7 @@ size = Vector3(30, 1, 90)
 metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 8.10894, 0)
+transform = Transform3D(-0.209891, -0.590038, -0.779616, -0.840204, -0.298926, 0.452439, -0.500004, 0.749999, -0.43301, -3.73185, 11.9735, -5.25035)
 shadow_enabled = true
 
 [node name="map" type="Node3D" parent="."]
