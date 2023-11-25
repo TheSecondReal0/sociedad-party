@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dc8e5ijq2oqtm"]
+
+[ext_resource type="Texture2D" uid="uid://cgpepek5huwkb" path="res://games/dodge/objects/chute/chute_albedo.png" id="1_5e2bd"]
+[ext_resource type="Texture2D" uid="uid://cahmagwl1nbpf" path="res://games/dodge/objects/chute/chute_normal.png" id="2_auqsm"]
+[ext_resource type="Texture2D" uid="uid://cpbji0r18taig" path="res://games/dodge/objects/chute/chute_roughness.png" id="3_jlc6s"]
+
+[resource]
+albedo_texture = ExtResource("1_5e2bd")
+metallic = 1.0
+roughness_texture = ExtResource("3_jlc6s")
+normal_enabled = true
+normal_texture = ExtResource("2_auqsm")
+clearcoat = 0.5
+uv1_scale = Vector3(18.585, 6.081, 18.585)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://y6grgwhn8fbs"]
+[gd_scene load_steps=8 format=3 uid="uid://c2hu5qxknt6s"]
 
 [ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="1_sjsnh"]
+[ext_resource type="Material" uid="uid://dc8e5ijq2oqtm" path="res://games/dodge/objects/chute/chute.tres" id="1_uuiy6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nw2ig"]
 size = Vector3(30, 1, 90)
@@ -14,6 +15,11 @@ size = Vector3(30, 10, 30)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qp0ve"]
 size = Vector3(20, 10, 50)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ep88g"]
+lifetime_randomness = 0.32
+emission_shape = 3
+emission_box_extents = Vector3(25, 10, 10)
+
 [node name="compactor" type="Node3D"]
 metadata/_edit_lock_ = true
 
@@ -22,6 +28,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
 size = Vector3(30, 1, 90)
+material = ExtResource("1_uuiy6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_nw2ig")
@@ -30,7 +37,6 @@ shape = SubResource("BoxShape3D_nw2ig")
 transform = Transform3D(-5.39067e-15, -1, 2.23517e-07, -4.37114e-08, -2.23517e-07, -1, 1, -6.15945e-17, -4.37114e-08, 44.873, 44.1172, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(60, 1, 90)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
@@ -40,8 +46,8 @@ shape = SubResource("BoxShape3D_vxe42")
 transform = Transform3D(-5.39067e-15, -1, 2.23517e-07, -4.37114e-08, -2.23517e-07, -1, 1, -6.15945e-17, -4.37114e-08, 20.5156, 53.4597, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(60, 1, 90)
+material = ExtResource("1_uuiy6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
 shape = SubResource("BoxShape3D_vxe42")
@@ -50,7 +56,6 @@ shape = SubResource("BoxShape3D_vxe42")
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965925, 0, -0.965926, 0.258819, 29.4619, 42.9455, 16.8041)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(30, 1, 90)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
@@ -60,7 +65,6 @@ shape = SubResource("BoxShape3D_nw2ig")
 transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965925, 0, -0.965925, -0.258819, 29.462, 42.946, -16.804)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(30, 1, 90)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
@@ -87,3 +91,7 @@ frequency = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="spawner"]
 shape = SubResource("BoxShape3D_qp0ve")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0)
+process_material = SubResource("ParticleProcessMaterial_ep88g")
