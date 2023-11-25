@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2hu5qxknt6s"]
+[gd_scene load_steps=17 format=3 uid="uid://y6grgwhn8fbs"]
 
 [ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="1_sjsnh"]
 [ext_resource type="Material" uid="uid://dc8e5ijq2oqtm" path="res://games/dodge/objects/chute/chute.tres" id="1_uuiy6"]
+[ext_resource type="Texture2D" uid="uid://cy2drpvshf6q1" path="res://games/dodge/effects/particles/fire/frame_0_delay-0.2s.png" id="3_x30rk"]
+[ext_resource type="Texture2D" uid="uid://c3rvn473s1oon" path="res://games/dodge/effects/particles/fire/frame_1_delay-0.2s.png" id="4_h6aet"]
+[ext_resource type="Texture2D" uid="uid://caqfku7stiqtt" path="res://games/dodge/effects/particles/fire/frame_2_delay-0.2s.png" id="5_owaja"]
+[ext_resource type="Texture2D" uid="uid://hsli0b7a6b7j" path="res://games/dodge/effects/particles/fire/frame_3_delay-0.2s.png" id="6_135kj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nw2ig"]
 size = Vector3(30, 1, 90)
@@ -14,6 +18,50 @@ size = Vector3(30, 10, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qp0ve"]
 size = Vector3(20, 10, 50)
+
+[sub_resource type="Curve" id="Curve_dkgpp"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gh7m3"]
+curve = SubResource("Curve_dkgpp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yarkd"]
+emission_shape = 3
+emission_box_extents = Vector3(5, 1, 2)
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+angular_velocity_curve = SubResource("CurveTexture_gh7m3")
+damping_min = 2.0
+damping_max = 5.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_832ux"]
+frames = 4
+frame_0/texture = ExtResource("3_x30rk")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("4_h6aet")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("5_owaja")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("6_135kj")
+frame_3/duration = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qltt1"]
+transparency = 1
+cull_mode = 2
+albedo_texture = SubResource("AnimatedTexture_832ux")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_cj5oy"]
+material = SubResource("StandardMaterial3D_qltt1")
+size = Vector2(0.5, 0.5)
 
 [node name="compactor" type="Node3D"]
 metadata/_edit_lock_ = true
@@ -82,7 +130,23 @@ gravity_direction = Vector3(-1, 0, 0)
 gravity = 25.0
 script = ExtResource("1_sjsnh")
 collision_shape = NodePath("CollisionShape3D")
-frequency = 10.0
+frequency = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="spawner"]
 shape = SubResource("BoxShape3D_qp0ve")
+
+[node name="fire" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="fire"]
+transform = Transform3D(1, 0, 0, 0, 1.9292, 0, 0, 0, 3.74878, 0, 0, 0)
+amount = 256
+visibility_aabb = AABB(-4.81831, -4, -4, 9.63663, 8, 8)
+process_material = SubResource("ParticleProcessMaterial_yarkd")
+draw_pass_1 = SubResource("QuadMesh_cj5oy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39157, 0)
+light_color = Color(0.996078, 0.380392, 0, 1)
+light_energy = 1000.0
+omni_range = 10.0
