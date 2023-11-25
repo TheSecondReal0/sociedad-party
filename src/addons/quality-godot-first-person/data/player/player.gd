@@ -67,6 +67,9 @@ func _process(delta):
 			parts.collision.scale.y = lerp(parts.collision.scale.y, base_player_y_scale, 10*delta)
 
 func _physics_process(delta):
+	if id != Network.get_my_id():
+		return
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -89,6 +92,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
+	if id != Network.get_my_id():
+		return
 	if event is InputEventMouseMotion:
 		if true:#!world.paused:
 			parts.head.rotation_degrees.y -= event.relative.x * sensitivity
