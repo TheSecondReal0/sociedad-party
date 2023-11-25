@@ -1,11 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2hu5qxknt6s"]
+[gd_scene load_steps=15 format=3 uid="uid://c2hu5qxknt6s"]
 
 [ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="1_sjsnh"]
 [ext_resource type="Material" uid="uid://dc8e5ijq2oqtm" path="res://games/dodge/objects/chute/chute.tres" id="1_uuiy6"]
-[ext_resource type="Texture2D" uid="uid://bfasgno8k6pla" path="res://games/dodge/effects/particles/fire/frame_0_delay-0.2s.png" id="3_x30rk"]
-[ext_resource type="Texture2D" uid="uid://dlkcqd4n5hh4l" path="res://games/dodge/effects/particles/fire/frame_1_delay-0.2s.png" id="4_h6aet"]
-[ext_resource type="Texture2D" uid="uid://bk458vhk57qgf" path="res://games/dodge/effects/particles/fire/frame_2_delay-0.2s.png" id="5_owaja"]
-[ext_resource type="Texture2D" uid="uid://o8l88awmttpf" path="res://games/dodge/effects/particles/fire/frame_3_delay-0.2s.png" id="6_135kj"]
+[ext_resource type="Texture2D" uid="uid://dr0jqp3aa1b4y" path="res://games/dodge/effects/particles/fire/fire_animated.tres" id="3_suchj"]
+[ext_resource type="Script" path="res://games/dodge/scripts/object_culler.gd" id="4_5061v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nw2ig"]
 size = Vector3(30, 1, 90)
@@ -14,7 +12,7 @@ size = Vector3(30, 1, 90)
 size = Vector3(60, 1, 90)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8j3y7"]
-size = Vector3(30, 10, 30)
+size = Vector3(100, 10, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qp0ve"]
 size = Vector3(20, 10, 50)
@@ -29,51 +27,87 @@ point_count = 2
 curve = SubResource("Curve_dkgpp")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yarkd"]
+lifetime_randomness = 1.0
 emission_shape = 3
 emission_box_extents = Vector3(5, 1, 2)
 direction = Vector3(0, 1, 0)
-gravity = Vector3(0, 0, 0)
+spread = 15.0
 initial_velocity_min = 1.0
-initial_velocity_max = 5.0
+initial_velocity_max = 7.5
 angular_velocity_min = -90.0
 angular_velocity_max = 90.0
 angular_velocity_curve = SubResource("CurveTexture_gh7m3")
+linear_accel_max = 3.05
+radial_accel_min = -8.5
 damping_min = 2.0
 damping_max = 5.0
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_832ux"]
-frames = 4
-frame_0/texture = ExtResource("3_x30rk")
-frame_0/duration = 0.2
-frame_1/texture = ExtResource("4_h6aet")
-frame_1/duration = 0.2
-frame_2/texture = ExtResource("5_owaja")
-frame_2/duration = 0.2
-frame_3/texture = ExtResource("6_135kj")
-frame_3/duration = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qltt1"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("AnimatedTexture_832ux")
+albedo_texture = ExtResource("3_suchj")
 billboard_mode = 1
 billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_cj5oy"]
 material = SubResource("StandardMaterial3D_qltt1")
-size = Vector2(0.5, 0.5)
+subdivide_width = 1
+subdivide_depth = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cc7or"]
+size = Vector3(15, 5, 20)
 
 [node name="compactor" type="Node3D"]
 metadata/_edit_lock_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="floor" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="floor"]
 size = Vector3(30, 1, 90)
 material = ExtResource("1_uuiy6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_nw2ig")
+
+[node name="backwall" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -57.463, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="backwall"]
+size = Vector3(30, 1, 90)
+material = ExtResource("1_uuiy6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="backwall"]
+shape = SubResource("BoxShape3D_nw2ig")
+
+[node name="ceiling" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.6811, 15.0313, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ceiling"]
+size = Vector3(30, 1, 90)
+material = ExtResource("1_uuiy6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling"]
+shape = SubResource("BoxShape3D_nw2ig")
+
+[node name="wall1" type="StaticBody3D" parent="."]
+transform = Transform3D(-1.13133e-08, 4.2222e-08, 1, 0.965926, 0.258819, 0, -0.258819, 0.965926, -4.37114e-08, -12.611, 14, -8.97904)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="wall1"]
+size = Vector3(30, 1, 90)
+material = ExtResource("1_uuiy6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall1"]
+shape = SubResource("BoxShape3D_nw2ig")
+
+[node name="wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(1.13133e-08, 4.2222e-08, 1, 0.965926, -0.258819, 0, 0.258819, 0.965926, -4.37114e-08, -12.611, 14, 8.959)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="wall2"]
+size = Vector3(30, 1, 90)
+material = ExtResource("1_uuiy6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2"]
 shape = SubResource("BoxShape3D_nw2ig")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
@@ -86,7 +120,7 @@ size = Vector3(60, 1, 90)
 shape = SubResource("BoxShape3D_vxe42")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
-transform = Transform3D(-5.39067e-15, -1, 2.23517e-07, -4.37114e-08, -2.23517e-07, -1, 1, -6.15945e-17, -4.37114e-08, 20.5156, 53.4597, 0)
+transform = Transform3D(-5.39067e-15, -1, 2.23517e-07, -4.37114e-08, -2.23517e-07, -1, 1, -6.15945e-17, -4.37114e-08, 14.7518, 60.4459, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D5"]
 size = Vector3(60, 1, 90)
@@ -113,13 +147,14 @@ size = Vector3(30, 1, 90)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
 shape = SubResource("BoxShape3D_nw2ig")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Boost box" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.992, 0, 0)
 gravity_space_override = 3
-gravity_point_center = Vector3(-1, 0.01, 0)
-gravity_direction = Vector3(-1, 0.01, 0)
+gravity_point_center = Vector3(-1, -0.1, 0)
+gravity_direction = Vector3(-1, -0.1, 0)
 gravity = 25.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boost box"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1244, 5.64648, 0)
 shape = SubResource("BoxShape3D_8j3y7")
 
@@ -135,18 +170,62 @@ frequency = 3.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="spawner"]
 shape = SubResource("BoxShape3D_qp0ve")
 
+[node name="lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0346, 13.2448, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.717647, 0, 0.0352941, 1)
+light_energy = 250.0
+shadow_enabled = true
+spot_range = 26.42
+spot_angle = 60.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -29.3816, 0, 0)
+light_color = Color(0.717647, 0, 0.0352941, 1)
+light_energy = 250.0
+shadow_enabled = true
+spot_range = 26.42
+spot_angle = 60.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -51.8549, 0, 0)
+light_color = Color(0.717647, 0, 0.0352941, 1)
+light_energy = 250.0
+shadow_enabled = true
+spot_range = 26.42
+spot_angle = 60.0
+
 [node name="fire" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="fire"]
 transform = Transform3D(1, 0, 0, 0, 1.9292, 0, 0, 0, 3.74878, 0, 0, 0)
+visible = false
 amount = 2171
 visibility_aabb = AABB(-4.81831, -4, -4, 9.63663, 8, 8)
 process_material = SubResource("ParticleProcessMaterial_yarkd")
 draw_pass_1 = SubResource("QuadMesh_cj5oy")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27766, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77481, -1.0669, 0)
 light_color = Color(0.996078, 0.380392, 0, 1)
 light_energy = 1000.0
-omni_range = 10.0
+shadow_enabled = true
+omni_range = 30.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 78.3026, 0)
+light_color = Color(1, 0.94902, 0.92549, 1)
+light_energy = 115.215
+shadow_enabled = true
+omni_range = 100.0
+
+[node name="object culler" type="Area3D" parent="." node_paths=PackedStringArray("collision_shape")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6929, -2.7774, 0)
+script = ExtResource("4_5061v")
+collision_shape = NodePath("CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="object culler"]
+shape = SubResource("BoxShape3D_cc7or")
