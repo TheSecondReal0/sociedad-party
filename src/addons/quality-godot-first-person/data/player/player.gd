@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+class_name Player
+
+var id: int = -1
 
 @export var sprint_enabled = true
 @export var crouch_enabled = true
@@ -29,12 +32,18 @@ var crouch_player_y_scale = 0.75
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _init(player_id: int):
+	id = player_id
 
 func _ready():
-	parts.camera.current = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if id == Network.get_my_id():
+		parts.camera.current = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 
 func _process(delta):
+	if id != Network.get_my_id():
+		return
 	if Input.is_action_pressed("left_shift") and !Input.is_action_pressed("ctrl") and sprint_enabled:
 		sprinting = true
 		speed = sprint_speed

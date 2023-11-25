@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2hu5qxknt6s"]
+[gd_scene load_steps=7 format=3 uid="uid://c2hu5qxknt6s"]
 
 [ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="1_sjsnh"]
 [ext_resource type="Material" uid="uid://dc8e5ijq2oqtm" path="res://games/dodge/objects/chute/chute.tres" id="1_uuiy6"]
-[ext_resource type="Texture2D" uid="uid://kw6j8jhvaejq" path="res://games/dodge/effects/particles/fire particles spritesheet.png" id="3_sfiwb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nw2ig"]
 size = Vector3(30, 1, 90)
@@ -15,16 +14,6 @@ size = Vector3(30, 10, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qp0ve"]
 size = Vector3(20, 10, 50)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r04im"]
-lifetime_randomness = 0.17
-direction = Vector3(1, 0.1, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65r63"]
-albedo_texture = ExtResource("3_sfiwb")
-
-[sub_resource type="QuadMesh" id="QuadMesh_fs8px"]
-material = SubResource("StandardMaterial3D_65r63")
 
 [node name="compactor" type="Node3D"]
 metadata/_edit_lock_ = true
@@ -97,9 +86,3 @@ frequency = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="spawner"]
 shape = SubResource("BoxShape3D_qp0ve")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95137, 0)
-amount = 98
-process_material = SubResource("ParticleProcessMaterial_r04im")
-draw_pass_1 = SubResource("QuadMesh_fs8px")
