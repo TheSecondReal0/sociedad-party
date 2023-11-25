@@ -1,13 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cc8ut2f7vwcwb"]
+[gd_scene load_steps=9 format=3 uid="uid://cc8ut2f7vwcwb"]
 
 [ext_resource type="Script" path="res://games/dodge/main/main.gd" id="1_l75uu"]
 [ext_resource type="PackedScene" uid="uid://cuijwapo0nuy8" path="res://games/dodge/objects/cube/cube.tscn" id="1_rp6qn"]
 [ext_resource type="PackedScene" uid="uid://b5tcfdnv0b738" path="res://games/dodge/player/player.tscn" id="2_56inp"]
 [ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://addons/quality-godot-first-person/data/sky.exr" id="3_ruipe"]
-[ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="5_s6lhy"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_nw2ig"]
-size = Vector3(30, 1, 90)
+[ext_resource type="PackedScene" uid="uid://y6grgwhn8fbs" path="res://games/dodge/levels/compactor.tscn" id="5_rb1wa"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5as3g"]
 panorama = ExtResource("3_ruipe")
@@ -27,64 +24,20 @@ fog_sky_affect = 0.67
 volumetric_fog_density = 0.0
 adjustment_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4mo0m"]
-size = Vector3(5, 10, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dj00q"]
-size = Vector3(5, 10, 25)
-
 [node name="main" type="Node3D"]
 script = ExtResource("1_l75uu")
 metadata/_edit_lock_ = true
 
-[node name="map" type="Node3D" parent="."]
-metadata/_edit_lock_ = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="map"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="map/StaticBody3D"]
-size = Vector3(30, 1, 90)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/StaticBody3D"]
-shape = SubResource("BoxShape3D_nw2ig")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="map"]
-transform = Transform3D(-3.78552e-08, -0.5, -0.866025, -2.18557e-08, 0.866025, -0.5, 1, 0, -4.37114e-08, 52.8233, 21.9354, 0)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="map/StaticBody3D2"]
-size = Vector3(30, 1, 90)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/StaticBody3D2"]
-shape = SubResource("BoxShape3D_nw2ig")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="map"]
-transform = Transform3D(-0.353553, -0.353553, -0.866025, 0.612372, 0.612372, -0.5, 0.707107, -0.707107, -3.09086e-08, 58.3075, 35.5942, 23.6236)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="map/StaticBody3D3"]
-size = Vector3(30, 1, 90)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/StaticBody3D3"]
-shape = SubResource("BoxShape3D_nw2ig")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="map"]
-transform = Transform3D(-0.353553, -0.353553, 0.866025, 0.612372, 0.612372, 0.5, -0.707107, 0.707107, -3.09086e-08, 58.3075, 35.5942, -23.9754)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="map/StaticBody3D4"]
-size = Vector3(30, 1, 90)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/StaticBody3D4"]
-shape = SubResource("BoxShape3D_nw2ig")
-
 [node name="objects" type="Node3D" parent="."]
 
 [node name="cube" parent="objects" instance=ExtResource("1_rp6qn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 60, -11.378)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 60, -11.378)
 
 [node name="cube2" parent="objects" instance=ExtResource("1_rp6qn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 60, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 60, 0)
 
 [node name="cube3" parent="objects" instance=ExtResource("1_rp6qn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 60, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 60, -5)
 
 [node name="player" parent="." instance=ExtResource("2_56inp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79552, 1.9618, 4.94451)
@@ -99,22 +52,4 @@ light_energy = 2.0
 shadow_enabled = true
 omni_range = 25.0
 
-[node name="Boost Area" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1467, 3.68415, 0)
-gravity_space_override = 3
-gravity_point_center = Vector3(-1, 0, 0)
-gravity_direction = Vector3(-1, 0, 0)
-gravity = 250.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boost Area"]
-shape = SubResource("BoxShape3D_4mo0m")
-
-[node name="Falling Object Spawner" type="Area3D" parent="." node_paths=PackedStringArray("collision_shape")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.827, 66.3553, 0)
-script = ExtResource("5_s6lhy")
-collision_shape = NodePath("../Boost Area/CollisionShape3D")
-frequency = 10.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Falling Object Spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61025, 1.7732, 0)
-shape = SubResource("BoxShape3D_dj00q")
+[node name="compactor" parent="." instance=ExtResource("5_rb1wa")]

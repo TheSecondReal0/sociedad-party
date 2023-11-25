@@ -1,15 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuijwapo0nuy8"]
+[gd_scene load_steps=4 format=3 uid="uid://cuijwapo0nuy8"]
 
 [ext_resource type="PackedScene" uid="uid://bihvhom5b0bji" path="res://games/dodge/scenes/dodge_object.tscn" id="1_e7ucm"]
-[ext_resource type="Shader" path="res://games/dodge/objects/cube/box.gdshader" id="2_lvlsh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xf6pf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5kbrd"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jixlv"]
-render_priority = 0
-shader = ExtResource("2_lvlsh")
 
 [node name="cube" instance=ExtResource("1_e7ucm")]
 
@@ -18,4 +13,3 @@ shape = SubResource("BoxShape3D_xf6pf")
 
 [node name="MeshInstance3D" parent="." index="1"]
 mesh = SubResource("BoxMesh_5kbrd")
-surface_material_override/0 = SubResource("ShaderMaterial_jixlv")

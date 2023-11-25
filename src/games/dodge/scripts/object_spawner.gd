@@ -44,7 +44,7 @@ func get_random_point_in_area() -> Vector3:
 	point.z -= size.z/2
 	
 	#offset with current transform
-	#point += self.transform
+#	point += self.transform.origin
 	
 	return point
 
