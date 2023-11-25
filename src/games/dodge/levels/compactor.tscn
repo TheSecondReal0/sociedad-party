@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://y6grgwhn8fbs"]
+[gd_scene load_steps=17 format=3 uid="uid://c2hu5qxknt6s"]
 
 [ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="1_sjsnh"]
 [ext_resource type="Material" uid="uid://dc8e5ijq2oqtm" path="res://games/dodge/objects/chute/chute.tres" id="1_uuiy6"]
-[ext_resource type="Texture2D" uid="uid://cy2drpvshf6q1" path="res://games/dodge/effects/particles/fire/frame_0_delay-0.2s.png" id="3_x30rk"]
-[ext_resource type="Texture2D" uid="uid://c3rvn473s1oon" path="res://games/dodge/effects/particles/fire/frame_1_delay-0.2s.png" id="4_h6aet"]
-[ext_resource type="Texture2D" uid="uid://caqfku7stiqtt" path="res://games/dodge/effects/particles/fire/frame_2_delay-0.2s.png" id="5_owaja"]
-[ext_resource type="Texture2D" uid="uid://hsli0b7a6b7j" path="res://games/dodge/effects/particles/fire/frame_3_delay-0.2s.png" id="6_135kj"]
+[ext_resource type="Texture2D" uid="uid://bfasgno8k6pla" path="res://games/dodge/effects/particles/fire/frame_0_delay-0.2s.png" id="3_x30rk"]
+[ext_resource type="Texture2D" uid="uid://dlkcqd4n5hh4l" path="res://games/dodge/effects/particles/fire/frame_1_delay-0.2s.png" id="4_h6aet"]
+[ext_resource type="Texture2D" uid="uid://bk458vhk57qgf" path="res://games/dodge/effects/particles/fire/frame_2_delay-0.2s.png" id="5_owaja"]
+[ext_resource type="Texture2D" uid="uid://o8l88awmttpf" path="res://games/dodge/effects/particles/fire/frame_3_delay-0.2s.png" id="6_135kj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nw2ig"]
 size = Vector3(30, 1, 90)
@@ -140,13 +140,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="fire"]
 transform = Transform3D(1, 0, 0, 0, 1.9292, 0, 0, 0, 3.74878, 0, 0, 0)
-amount = 256
+amount = 2171
 visibility_aabb = AABB(-4.81831, -4, -4, 9.63663, 8, 8)
 process_material = SubResource("ParticleProcessMaterial_yarkd")
 draw_pass_1 = SubResource("QuadMesh_cj5oy")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39157, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27766, 0)
 light_color = Color(0.996078, 0.380392, 0, 1)
 light_energy = 1000.0
 omni_range = 10.0

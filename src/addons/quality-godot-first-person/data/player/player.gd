@@ -32,10 +32,10 @@ var crouch_player_y_scale = 0.75
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _init(player_id: int):
-	id = player_id
-
 func _ready():
+	print("My id is ", id)
+	self.set_multiplayer_authority(id)
+	print(Network.get_my_id())
 	if id == Network.get_my_id():
 		parts.camera.current = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -44,6 +44,9 @@ func _ready():
 func _process(delta):
 	if id != Network.get_my_id():
 		return
+	
+	rpc("sync_over_network", self.global_position)
+	
 	if Input.is_action_pressed("left_shift") and !Input.is_action_pressed("ctrl") and sprint_enabled:
 		sprinting = true
 		speed = sprint_speed
@@ -97,3 +100,7 @@ func _on_pause():
 
 func _on_unpause():
 	pass
+
+@rpc ("authority")
+func sync_over_network(pos: Vector3):
+	self.global_position = pos
