@@ -262,7 +262,7 @@ draw_pass_1 = SubResource("QuadMesh_cj5oy")
 [node name="light pivot" type="Node3D" parent="fire"]
 transform = Transform3D(1, 0, 0, 0, 0.927184, 0.374607, 0, -0.374607, 0.927184, -14.8413, -7.11287, 0)
 script = ExtResource("4_iqrnq")
-speed = 1.0
+speed = 0.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
@@ -277,7 +277,7 @@ omni_range = 30.0
 [node name="light pivot2" type="Node3D" parent="fire"]
 transform = Transform3D(1, 0, 0, 0, 0.927184, 0.374607, 0, -0.374607, 0.927184, -10.2863, -7.11287, 3.74485)
 script = ExtResource("4_iqrnq")
-speed = 2.0
+speed = 1.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
@@ -292,11 +292,11 @@ omni_range = 30.0
 [node name="light pivot3" type="Node3D" parent="fire"]
 transform = Transform3D(1, 0, 0, 0, 0.927184, 0.374607, 0, -0.374607, 0.927184, -9.69977, -7.11287, -4.89365)
 script = ExtResource("4_iqrnq")
-speed = 3.0
+speed = 1.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
-light_color = Color(0.996078, 0.054902, 0, 1)
+light_color = Color(0.996078, 0.313726, 0, 1)
 light_energy = 1500.0
 light_projector = SubResource("NoiseTexture2D_5bll3")
 light_size = 0.5
