@@ -29,13 +29,6 @@ metadata/_edit_lock_ = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sfmkw")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, 0)
-light_color = Color(1, 0, 0.0235294, 1)
-light_energy = 2.0
-shadow_enabled = true
-omni_range = 25.0
-
 [node name="compactor" parent="." instance=ExtResource("5_rb1wa")]
 
 [node name="spawn" type="Marker3D" parent="."]

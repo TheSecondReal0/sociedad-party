@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cgbniw6kxonot"]
+
+[ext_resource type="Texture2D" uid="uid://bttsmq5wuex56" path="res://games/dodge/objects/car/car_albedo.png" id="1_yyf5u"]
+[ext_resource type="Texture2D" uid="uid://bql7m1sc3u8c3" path="res://games/dodge/objects/car/car_normal.png" id="2_4l3ur"]
+[ext_resource type="Texture2D" uid="uid://xld05sncj1ok" path="res://games/dodge/objects/car/car_roughness.png" id="3_tg436"]
+
+[resource]
+albedo_texture = ExtResource("1_yyf5u")
+roughness_texture = ExtResource("3_tg436")
+normal_enabled = true
+normal_texture = ExtResource("2_4l3ur")

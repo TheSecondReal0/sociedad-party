@@ -287,7 +287,7 @@ speed = 0.5
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
 light_color = Color(0.996078, 0.380392, 0, 1)
-light_energy = 1500.0
+light_energy = 2000.0
 light_projector = SubResource("NoiseTexture2D_8bf1e")
 light_size = 0.5
 shadow_enabled = true
@@ -302,7 +302,7 @@ speed = 1.5
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
 light_color = Color(0.996078, 0.184314, 0, 1)
-light_energy = 1500.0
+light_energy = 2000.0
 light_projector = SubResource("NoiseTexture2D_7sxdn")
 light_size = 0.5
 shadow_enabled = true
@@ -317,7 +317,7 @@ speed = 1.0
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
 light_color = Color(0.996078, 0.313726, 0, 1)
-light_energy = 1500.0
+light_energy = 2000.0
 light_projector = SubResource("NoiseTexture2D_5bll3")
 light_size = 0.5
 shadow_enabled = true
