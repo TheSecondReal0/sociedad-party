@@ -12,6 +12,7 @@ var timer_threshold: float = 1.0 / frequency
 
 func _ready():
 	rng.randomize()
+	timer_threshold = 1.0 / frequency
 	
 	var resources: Array = Helpers.load_files_in_dir_with_exts("res://games/dodge/objects", [".tres"])
 	for res in resources:

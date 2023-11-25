@@ -100,20 +100,20 @@ shadow_enabled = true
 omni_range = 25.0
 
 [node name="Boost Area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1467, 3.68415, 0)
 gravity_space_override = 3
-gravity_point_center = Vector3(-5, -1, 0)
-gravity_direction = Vector3(-5, -1, 0)
-gravity = 70.38
+gravity_point_center = Vector3(-1, 0, 0)
+gravity_direction = Vector3(-1, 0, 0)
+gravity = 250.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boost Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9885, 4.65187, 0)
 shape = SubResource("BoxShape3D_4mo0m")
 
 [node name="Falling Object Spawner" type="Area3D" parent="." node_paths=PackedStringArray("collision_shape")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.827, 66.3553, 0)
 script = ExtResource("5_s6lhy")
 collision_shape = NodePath("../Boost Area/CollisionShape3D")
-frequency = 2.0
+frequency = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Falling Object Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61025, 1.7732, 0)
