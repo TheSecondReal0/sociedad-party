@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DodgeResource" load_steps=3 format=3 uid="uid://bav7ne5v3m5fh"]
+
+[ext_resource type="PackedScene" uid="uid://bgotcj7d35wu7" path="res://games/dodge/objects/test/test_object.tscn" id="1_e4s63"]
+[ext_resource type="Script" path="res://games/dodge/classes/dodge_resource.gd" id="1_r10km"]
+
+[resource]
+script = ExtResource("1_r10km")
+name = "test"
+weight = 1.0
+scene = ExtResource("1_e4s63")

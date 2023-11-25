@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgotcj7d35wu7"]
+[gd_scene load_steps=8 format=3 uid="uid://bgotcj7d35wu7"]
 
 [ext_resource type="ArrayMesh" uid="uid://c5052jwscdu7h" path="res://games/dodge/objects/test/test object.obj" id="1_4kb7k"]
+[ext_resource type="Script" path="res://games/dodge/classes/dodge_object.gd" id="1_f0efb"]
 [ext_resource type="Texture2D" uid="uid://cv0iiygiin4c0" path="res://games/dodge/objects/test/test_albedo.png" id="2_qvchb"]
 [ext_resource type="Texture2D" uid="uid://c1poajmywgvhk" path="res://games/dodge/objects/test/test_normal.png" id="3_y2rhd"]
 [ext_resource type="Texture2D" uid="uid://bn75h6a5ji1ct" path="res://games/dodge/objects/test/test_roughness.png" id="4_ks01n"]
@@ -15,6 +16,7 @@ normal_texture = ExtResource("3_y2rhd")
 points = PackedVector3Array(-1, -1, -1.00024, -1, 0.999779, -1.00024, 0.160875, -0.0863656, -1.85237, 0.999991, -1, 1, -1, -1, 1, 0.999991, 0.999779, -1.00024, -1, 0.999779, 1, 1.54223, 1.85172, 0.84867)
 
 [node name="test object" type="RigidBody3D"]
+script = ExtResource("1_f0efb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_4kb7k")

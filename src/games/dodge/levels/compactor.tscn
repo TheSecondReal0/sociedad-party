@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2hu5qxknt6s"]
+[gd_scene load_steps=22 format=3 uid="uid://c2hu5qxknt6s"]
 
 [ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="1_sjsnh"]
 [ext_resource type="Material" uid="uid://dc8e5ijq2oqtm" path="res://games/dodge/objects/chute/chute.tres" id="1_uuiy6"]
@@ -54,6 +54,26 @@ billboard_keep_scale = true
 material = SubResource("StandardMaterial3D_qltt1")
 subdivide_width = 1
 subdivide_depth = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_51r2i"]
+seed = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8bf1e"]
+noise = SubResource("FastNoiseLite_51r2i")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8ibpb"]
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7sxdn"]
+seamless = true
+noise = SubResource("FastNoiseLite_8ibpb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_i6jxn"]
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5bll3"]
+seamless = true
+noise = SubResource("FastNoiseLite_i6jxn")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cc7or"]
 size = Vector3(15, 5, 20)
@@ -181,8 +201,8 @@ shape = SubResource("BoxShape3D_nw2ig")
 [node name="Boost box" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.992, 0, 0)
 gravity_space_override = 3
-gravity_point_center = Vector3(-1, -0.1, 0)
-gravity_direction = Vector3(-1, -0.1, 0)
+gravity_point_center = Vector3(-1, -0.5, 0)
+gravity_direction = Vector3(-1, -0.5, 0)
 gravity = 25.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boost box"]
@@ -248,7 +268,10 @@ speed = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
 light_color = Color(0.996078, 0.380392, 0, 1)
 light_energy = 1000.0
+light_projector = SubResource("NoiseTexture2D_8bf1e")
+light_size = 0.5
 shadow_enabled = true
+distance_fade_begin = 30.0
 omni_range = 30.0
 
 [node name="light pivot2" type="Node3D" parent="fire"]
@@ -257,9 +280,12 @@ script = ExtResource("4_iqrnq")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
-light_color = Color(0.996078, 0.380392, 0, 1)
+light_color = Color(0.996078, 0.184314, 0, 1)
 light_energy = 1000.0
+light_projector = SubResource("NoiseTexture2D_7sxdn")
+light_size = 0.5
 shadow_enabled = true
+distance_fade_begin = 25.0
 omni_range = 30.0
 
 [node name="light pivot3" type="Node3D" parent="fire"]
@@ -269,9 +295,12 @@ speed = 7.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire/light pivot3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24097, 1.23165, 0)
-light_color = Color(0.996078, 0.380392, 0, 1)
+light_color = Color(0.996078, 0.054902, 0, 1)
 light_energy = 1000.0
+light_projector = SubResource("NoiseTexture2D_5bll3")
+light_size = 0.5
 shadow_enabled = true
+distance_fade_begin = 25.0
 omni_range = 30.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
