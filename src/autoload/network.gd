@@ -426,9 +426,11 @@ func _ready():
 func _process(_delta):
 	if net_protocol != NET_PROTOCOLS.WEBSOCKET:
 		return
+	peer = peer as WebSocketMultiplayerPeer
 	if peer != null:
 		if server:
-			if peer.is_listening():
-				peer.poll()
+			peer.poll()
+#			if peer.is_listening():
+#				peer.poll()
 		elif (peer.get_connection_status() == MultiplayerPeer.CONNECTION_CONNECTED || peer.get_connection_status() == MultiplayerPeer.CONNECTION_CONNECTING):
 			peer.poll()
