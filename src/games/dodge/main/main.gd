@@ -23,6 +23,7 @@ func _process(delta):
 	player_ids = Network.get_peers()
 	print(player_ids)
 	for p in players:
+		p.name = "-1" + p.name
 		p.queue_free()
 	for id in player_ids:
 		var new_player = player_scene.instantiate(id)

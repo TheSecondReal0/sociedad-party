@@ -106,6 +106,6 @@ func _on_pause():
 func _on_unpause():
 	pass
 
-@rpc ("authority")
+@rpc ("authority", "unreliable")
 func sync_over_network(pos: Vector3):
 	self.global_position = pos

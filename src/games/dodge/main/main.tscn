@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc8ut2f7vwcwb"]
+[gd_scene load_steps=7 format=3 uid="uid://cc8ut2f7vwcwb"]
 
 [ext_resource type="Script" path="res://games/dodge/main/main.gd" id="1_l75uu"]
-[ext_resource type="PackedScene" uid="uid://b5tcfdnv0b738" path="res://games/dodge/player/player.tscn" id="2_56inp"]
 [ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://addons/quality-godot-first-person/data/sky.exr" id="3_ruipe"]
 [ext_resource type="PackedScene" uid="uid://c2hu5qxknt6s" path="res://games/dodge/levels/compactor.tscn" id="5_rb1wa"]
 
@@ -26,9 +25,6 @@ adjustment_enabled = true
 [node name="main" type="Node3D"]
 script = ExtResource("1_l75uu")
 metadata/_edit_lock_ = true
-
-[node name="player" parent="." instance=ExtResource("2_56inp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79552, 1.9618, 4.94451)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sfmkw")
