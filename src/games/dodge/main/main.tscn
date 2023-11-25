@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cuijwapo0nuy8" path="res://games/dodge/objects/cube/cube.tscn" id="1_rp6qn"]
 [ext_resource type="PackedScene" uid="uid://b5tcfdnv0b738" path="res://games/dodge/player/player.tscn" id="2_56inp"]
 [ext_resource type="Texture2D" uid="uid://bfmbndv1sge56" path="res://addons/quality-godot-first-person/data/sky.exr" id="3_ruipe"]
-[ext_resource type="PackedScene" uid="uid://c2hu5qxknt6s" path="res://games/dodge/levels/compactor.tscn" id="5_rb1wa"]
+[ext_resource type="PackedScene" uid="uid://y6grgwhn8fbs" path="res://games/dodge/levels/compactor.tscn" id="5_rb1wa"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5as3g"]
 panorama = ExtResource("3_ruipe")
