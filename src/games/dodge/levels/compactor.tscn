@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://y6grgwhn8fbs"]
+[gd_scene load_steps=6 format=3 uid="uid://y6grgwhn8fbs"]
+
+[ext_resource type="Script" path="res://games/dodge/scripts/object_spawner.gd" id="1_sjsnh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nw2ig"]
 size = Vector3(30, 1, 90)
@@ -8,6 +10,9 @@ size = Vector3(60, 1, 90)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8j3y7"]
 size = Vector3(30, 10, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qp0ve"]
+size = Vector3(20, 10, 50)
 
 [node name="compactor" type="Node3D"]
 metadata/_edit_lock_ = true
@@ -63,10 +68,22 @@ shape = SubResource("BoxShape3D_nw2ig")
 
 [node name="Area3D" type="Area3D" parent="."]
 gravity_space_override = 3
-gravity_point_center = Vector3(-1, 0, 0)
-gravity_direction = Vector3(-1, 0, 0)
+gravity_point_center = Vector3(-1, 0.01, 0)
+gravity_direction = Vector3(-1, 0.01, 0)
 gravity = 25.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1244, 5.64648, 0)
 shape = SubResource("BoxShape3D_8j3y7")
+
+[node name="spawner" type="Area3D" parent="." node_paths=PackedStringArray("collision_shape")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8404, 84.4201, 0)
+gravity_point_center = Vector3(-1, 0, 0)
+gravity_direction = Vector3(-1, 0, 0)
+gravity = 25.0
+script = ExtResource("1_sjsnh")
+collision_shape = NodePath("CollisionShape3D")
+frequency = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spawner"]
+shape = SubResource("BoxShape3D_qp0ve")
