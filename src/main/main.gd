@@ -17,6 +17,7 @@ func _ready():
 	GameManager.connect("start_game_signal", Callable(self, "start_game"))
 #	print(Network.is_network_server())
 	if Network.is_server():
+		print("interacting with host ui")
 		host_ui_res.interact()
 	score_ui_res.interact()
 #	print("asaio party main loaded")

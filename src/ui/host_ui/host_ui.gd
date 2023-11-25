@@ -6,6 +6,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 # warning-ignore:return_value_discarded
+	print("host ui ready")
 	switch_button.connect("pressed", Callable(self, "switch_game"))
 	gen_game_buttons()
 
