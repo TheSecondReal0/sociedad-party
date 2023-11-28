@@ -23,5 +23,5 @@ func end_turn(id: int):
 		return
 	elif helper.current_turn_player.can_end_turn():
 		helper.current_turn_player.end_turn()
-		helper.inc
+		helper.increment_turn()
 
